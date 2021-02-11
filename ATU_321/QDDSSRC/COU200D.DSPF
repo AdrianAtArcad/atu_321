@@ -1,0 +1,70 @@
+000017161104     A*%%TS  SD  20161104  162149  VTAQUIN     REL-V7R1M0  5770-WDS
+000180161104     A*%%EC
+000190161104     A                                      DSPSIZ(24 80 *DS3)
+000200161104     A                                      INDARA
+000210161104     A                                      CA03(03)
+000220161104     A                                      CA12(12)
+000230161104     A                                      PRINT
+000240161104     A                                      ERRSFL
+000250161104     A          R SFL01                     SFL
+000260161104     A*%%TS  SD  20161104  162149  VTAQUIN     REL-V7R1M0  5770-WDS
+000270161104     A  33                                  SFLNXTCHG
+000280161104     A            OPT01          2Y 0B  7  3
+000290161104     A  34                                  DSPATR(RI)
+000300161104     A  34                                  DSPATR(PC)
+000310161104     A                                      EDTCDE(Z)
+000320161104     A            COID      R        O  7  7REFFLD(FCOUN/COID *LIBL/COUNTRY)
+000330161104     A            COUNTR    R        O  7 10REFFLD(FCOUN/COUNTR *LIBL/COUNTRY)
+000340161104     A            COISO     R        O  7 41REFFLD(FCOUN/COISO *LIBL/COUNTRY)
+000350161104     A          R CTL01                     SFLCTL(SFL01)
+000360161104     A*%%TS  SD  20161104  162149  VTAQUIN     REL-V7R1M0  5770-WDS
+000370161104     A                                      SFLSIZ(0015)
+000380161104     A                                      SFLPAG(0014)
+000390161104     A N80                                  PAGEDOWN(25 'dynamic subfile')
+000400161104     A                                      OVERLAY
+000410161104     A  31                                  SFLDSP
+000420161104     A  32                                  SFLDSPCTL
+000430161104     A  30                                  SFLCLR
+000440161104     A  80                                  SFLEND(*MORE)
+000450161104     A  35                                  SFLMSG('Invalid Option' 35)
+000460161104     A            RRB01          4S 0H      SFLRCDNBR
+000470161104     A                                  1  2'COU200 '
+000480161104     A                                      COLOR(BLU)
+000490161104     A                                  3  4'Type options, press Enter.'
+000500161104     A                                      COLOR(BLU)
+000510161104     A                                  4  6'2=Edit'
+000520161104     A                                      COLOR(BLU)
+000530161104     A                                  6  3'Opt'
+000540161104     A                                      DSPATR(HI)
+000550161104     A                                  1 31'Work with Countries'
+000560161104     A                                      DSPATR(HI)
+000570161104     A                                  1 66DATE
+000580161104     A                                      EDTCDE(Y)
+000590161104     A                                  2 66TIME
+000600161104     A          R KEY01
+000610161104     A                                 23  3'F3=Exit'
+000620161104     A                                      COLOR(BLU)
+000630161104     A                                 23 19'F12=Cancel'
+000640161104     A                                      COLOR(BLU)
+000650161104     A          R FMT02
+000660161104     A*%%TS  SD  20161104  162149  VTAQUIN     REL-V7R1M0  5770-WDS
+000670161104     A                                  1  2'COU200 '
+000680161104     A                                      COLOR(BLU)
+000690161104     A                                  3  4'Type choices, press Enter.'
+000700161104     A                                      COLOR(BLU)
+000710161104     A                                 23  3'F3=Exit'
+000720161104     A                                      COLOR(BLU)
+000730161104     A                                 23 19'F12=Cancel'
+000740161104     A                                      COLOR(BLU)
+000750161104     A                                  6  4'Country Name . . .'
+000760161104     A                                  5  4'Country Code . . :'
+000770161104     A                                  7  4'Iso Code (3) . . .'
+000780161104     A                                  1 34'Edit a country'
+000790161104     A                                      DSPATR(HI)
+000800161104     A                                  1 66DATE
+000810161104     A                                      EDTCDE(Y)
+000820161104     A                                  2 66TIME
+000830161104     A            COID      R        O  5 24REFFLD(FCOUN/COID *LIBL/COUNTRY)
+000840161104     A            COUNTR    R        B  6 24REFFLD(FCOUN/COUNTR *LIBL/COUNTRY)
+000850161104     A                                      CHECK(LC)
+000860161104     A            COISO     R        B  7 24REFFLD(FCOUN/COISO *LIBL/COUNTRY)

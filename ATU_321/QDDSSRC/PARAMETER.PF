@@ -1,0 +1,12 @@
+000018161209     A                                      UNIQUE
+000019161209     A          R FPARAM
+000020161209     A            PACODE        10          TEXT('Parameter code')
+000021161209     A            PASUBCODE     10          TEXT('Parameter sub-Code')
+000022161209     A            PARM1         10          TEXT('Parameter 1')
+000023161209     A            PARM2        100          TEXT('Parameter 2')
+000024161209     A            PARM3          2          TEXT('Parameter 3')
+000025161209     A            PARM4          1  0       TEXT('Parameter 4')
+000026161209     A            PARM5          3  0       TEXT('Parameter 5')
+000027161209     A          K PACODE
+000029161209     A          K PASUBCODE
+000030161209

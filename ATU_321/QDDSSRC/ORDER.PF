@@ -1,0 +1,11 @@
+000100161025                                            REF(SAMREF)
+000200000714                R FORDE
+000300161025                  ORID      R
+000400161025                  ORYEAR    R               REFFLD(YEAR)
+000500161025                  ORCUID    R               REFFLD(CUID)
+000600161025                  ORDATE         8  0       TEXT('ORDER DATE')
+000601161025                                            COLHDG('ORDER' 'DATE')
+000700161025                  ORDATDEL       8  0       TEXT('DELIVERY DATE')
+000701161025                                            COLHDG('DELIVERY' 'DATE')
+000800161025                  ORDATCLO       8  0       TEXT('CLOSE DATE')
+000900161025                                            COLHDG('CLOSE' 'DATE')

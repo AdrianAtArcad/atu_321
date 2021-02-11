@@ -1,0 +1,138 @@
+000018161209     A*%%TS  SD  20161209  103924  VTAQUIN     REL-V7R1M0  5770-WDS
+000190161209     A*%%EC
+000200161209     A                                      DSPSIZ(24 80 *DS3)
+000210161209     A                                      INDARA
+000220161209     A                                      CA03(03)
+000230161209     A                                      CA12(12)
+000240161209     A                                      PRINT
+000250161209     A                                      ERRSFL
+000260161129     A          R SFL01                     SFL
+000270161129     A*%%TS  SD  20161129  100208  VTAQUIN     REL-V7R1M0  5770-WDS
+000280161129     A  33                                  SFLNXTCHG
+000290161129     A            OPT01          2Y 0B  7  3
+000300161129     A  34                                  DSPATR(RI)
+000310161129     A  34                                  DSPATR(PC)
+000320161129     A                                      EDTCDE(Z)
+000330161129     A            LINE      R        O  7  6REFFLD(FDETO/ODLINE *LIBL/DETORD)
+000340161129     A            ODARID    R        O  7 12REFFLD(FDETO/ODARID *LIBL/DETORD)
+000350161129     A            ARTDESC       30A  O  7 19
+000360161129     A            ODQTY     R        O  7 50REFFLD(FDETO/ODQTY *LIBL/DETORD)
+000370161129     A                                      EDTCDE(Z)
+000380161129     A            ODTOT     R        O  7 66REFFLD(FDETO/ODTOT *LIBL/DETORD)
+000390161129     A            ODPRICE   R        O  7 56REFFLD(FDETO/ODPRICE *LIBL/DETORD)
+000400161201     A          R CTL01                     SFLCTL(SFL01)
+000410161201     A*%%TS  SD  20161201  111220  VTAQUIN     REL-V7R1M0  5770-WDS
+000420161201     A                                      SFLSIZ(0015)
+000430161201     A                                      SFLPAG(0014)
+000440161201     A N80                                  PAGEDOWN(25 'dynamic subfile')
+000450161201     A                                      CF06(06)
+000460161201     A                                      CF08(08 'Confirm')
+000470161201     A                                      OVERLAY
+000480161201     A  31                                  SFLDSP
+000490161201     A  32                                  SFLDSPCTL
+000500161201     A  30                                  SFLCLR
+000510161201     A  80                                  SFLEND(*MORE)
+000520161201     A  35                                  SFLMSG('Invalid Option' 35)
+000530161201     A  36                                  SFLMSG('Confirmation is not allowed-
+000540161201     A                                       when options are pending.' 36)
+000550161201     A            RRB01          4S 0H      SFLRCDNBR
+000560161201     A                                  1  2'ORD100-1'
+000570161201     A                                      COLOR(BLU)
+000580161201     A                                  3  4'Type options, press Enter. Press F-
+000590161201     A                                      8 to confirm.'
+000600161201     A                                      COLOR(BLU)
+000610161201     A                                  4  6'2=Edit'
+000620161201     A                                      COLOR(BLU)
+000630161201     A                                  6  3'Opt'
+000640161201     A                                      DSPATR(HI)
+000650161201     A                                  1 29'Create a Customer Order'
+000660161201     A                                      DSPATR(HI)
+000670161201     A                                  4 17'4=Delete'
+000680161201     A                                      COLOR(BLU)
+000690161201     A                                  2  4'Customer . . . :'
+000700161201     A            ORCUID    R        O  2 22REFFLD(FORDE/ORCUID *LIBL/ORDER)
+000710161201     A            CUSTNAME      30A  O  2 29
+000720161201     A                                  6  7'Line'
+000730161201     A                                      DSPATR(HI)
+000740161201     A                                  6 12'Item'
+000750161201     A                                      DSPATR(HI)
+000760161201     A                                  6 19'Description'
+000770161201     A                                      DSPATR(HI)
+000780161201     A                                  6 52'Qty'
+000790161201     A                                      DSPATR(HI)
+000800161201     A                                  6 58'U.Price'
+000810161201     A                                      DSPATR(HI)
+000820161201     A                                  6 70'Total'
+000830161201     A                                      DSPATR(HI)
+000840161201     A                                  1 69DATE
+000850161201     A                                      EDTCDE(Y)
+000860161201     A                                      COLOR(BLU)
+000870161201     A                                  2 69TIME
+000880161201     A                                      COLOR(BLU)
+000890161201     A          R KEY01
+000900161201     A*%%TS  SD  20161201  111220  VTAQUIN     REL-V7R1M0  5770-WDS
+000910161201     A                                 23  3'F3=Exit'
+000920161201     A                                      COLOR(BLU)
+000930161201     A                                 23 40'F12=Cancel'
+000940161201     A                                      COLOR(BLU)
+000950161201     A                                 23 14'F6=Add'
+000960161201     A                                      COLOR(BLU)
+000970161201     A                                 23 25'F8=Confirm'
+000980161201     A                                      COLOR(BLU)
+000990161201     A            TOT       R        O 22 66REFFLD(FDETO/ODTOT *LIBL/DETORD)
+001000161201     A                                      DSPATR(HI)
+001010161201     A            TOTVAT    R        O 23 66REFFLD(FDETO/ODTOTVAT *LIBL/DETORD)
+001020161201     A                                      DSPATR(HI)
+001030161129     A          R FMT02
+001040161129     A*%%TS  SD  20161129  152013  VTAQUIN     REL-V7R1M0  5770-WDS
+001050161129     A                                      CHANGE(27)
+001060161129     A                                  1  2'ORD100-2'
+001070161129     A                                      COLOR(BLU)
+001080161129     A                                  3  4'Type choices, press Enter.'
+001090161129     A                                      COLOR(BLU)
+001100161129     A                                 23  3'F3=Exit'
+001110161129     A                                      COLOR(BLU)
+001120161129     A                                 23 19'F12=Cancel'
+001130161129     A                                      COLOR(BLU)
+001140161129     A                                  1 28'Add a customer Order Line'
+001150161129     A                                      DSPATR(HI)
+001160161129     A                                  1 65DATE
+001170161129     A                                      EDTCDE(Y)
+001180161129     A                                      COLOR(BLU)
+001190161129     A                                  2 65TIME
+001200161129     A                                      COLOR(BLU)
+001210161129     A                                  5  4'Customer . . . . :'
+001220161129     A                                  7  4'Article  . . . . :'
+001230161129     A                                  9  4'Quantity . . . . .'
+001240161129     A                                 10  4'Unit price . . . .'
+001250161129     A                                 11  4'Net price  . . . :'
+001260161129     A                                 12  4'Vat  . . . . . . :'
+001270161129     A                                 13  4'Total  . . . . . :'
+001280161129     A            ODARID    R        O  7 23REFFLD(FDETO/ODARID *LIBL/DETORD)
+001290161129     A            ODQTY     R        B  9 23REFFLD(FDETO/ODQTY *LIBL/DETORD)
+001300161129     A            ODPRICE   R        B 10 23REFFLD(FDETO/ODPRICE *LIBL/DETORD)
+001310161129     A            ODTOT     R        O 11 23REFFLD(FDETO/ODTOT *LIBL/DETORD)
+001320161129     A            ODTOTVAT  R        O 13 23REFFLD(FDETO/ODTOTVAT *LIBL/DETORD)
+001330161129     A            VAT       R        O 12 23REFFLD(FDETO/ODTOTVAT *LIBL/DETORD)
+001340161129     A            VATRATE   R        O  8 23REFFLD(FVAT/VATRATE *LIBL/VATDEF)
+001350161129     A                                  8  6'VAT rate . . . :'
+001360161129     A            ARTDESC       30A  O  7 31
+001370161129     A                                  6  4'Order line . . . :'
+001380161129     A            ODLINE    R        O  6 23REFFLD(FDETO/ODLINE *LIBL/DETORD)
+001390161129     A            ORCUID    R        O  5 23REFFLD(FORDE/ORCUID *LIBL/ORDER)
+001400161129     A            CUSTNAME      30A  O  5 31
+001410161129     A            MODE           3   O  3 65COLOR(BLU)
+001420161209     A          R FMT03
+001430161209     A*%%TS  SD  20161209  103924  VTAQUIN     REL-V7R1M0  5770-WDS
+001440161209     A                                      WINDOW(7 10 7 50)
+001450161209     A                                      WDWBORDER((*CHAR '*-*!!*-*'))
+001460161209     A                                  1 20'Confirmation'
+001470161209     A                                      DSPATR(HI)
+001480161209     A                                  3  2'Order'
+001490161209     A            ORID      R        O  3  8REFFLD(FORDE/ORID *LIBL/ORDER)
+001500161209     A                                  3 15'has been create for user'
+001510161209     A            ORCUID    R        O  3 40REFFLD(FORDE/ORCUID *LIBL/ORDER)
+001520161209     A            CUSTNAME      30A  O  4  2
+001530161209     A                                  5  2'The order is printed.'
+001540161209     A                                  6  2'Press Enter to continue.'
+001550161209     A                                      COLOR(BLU)

@@ -1,0 +1,16 @@
+000100161024                                            REF(SAMREF)
+000200000713                                            UNIQUE
+000300000713                R FFAMI
+000400161024                  FAID      R
+000500161024                  FADESC    R
+000501161027                  FAVATCD   R               REFFLD(VATCODE)
+000502161027                                            TEXT('DFT VAT CODE')
+000503161027                                            COLHDG('DFT' 'VAT' 'CD')
+000600161024                  FACREA          L         TEXT('CREATION DATE')
+000700161024                                            COLHDG('CREAETION' 'DATE')
+000800161024                  FAMOD           Z         TEXT('LAST MODIFICATION')
+000900161024                                            COLHDG('LAST' 'MODIFICATION')
+001000161024                  FAMODID       10          TEXT('LAS MOD BY')
+001100161024                                            COLHDG('LAST' 'MODIF.' 'BY')
+001200161024                  FADEL     R               REFFLD(DLCODE)
+001300161024                K FAID

@@ -1,0 +1,157 @@
+000100161027:pnlgrp dftmsgf=qcpfmsg
+000200161027        submsgf=sammsgf.
+000300161027:copyr.
+000400161027(C) Copyright Arcad Software, 2016.
+000500161027:import name='*'
+000600161027        pnlgrp=SAMHELP.
+000700161027:var name=Zmenu.
+000800161027:KEYL     NAME=key01
+000900161027          HELP=help.
+001000161027:KEYI     KEY=F1
+001100161027          HELP=help
+001200161027          ACTION=HELP.
+001300161027:KEYI     KEY=F3
+001400161027          HELP=help
+001500161027          PRIORITY=25
+001600161027          ACTION='exit set'.
+001700161027F3=Exit
+001800161027:KEYI     KEY=F4
+001900161027          HELP=help
+002000161027          PRIORITY=30
+002100161027          ACTION=PROMPT.
+002200161027F4=Prompt
+002300161027:KEYI     KEY=F6
+002400161027          HELP=help
+002500161027          PRIORITY=25
+002600161027          ACTION='cmd dspmsg'.
+002700161027F6=Messages
+002800161027:KEYI     KEY=F9
+002900161027          help=help
+003000161027          ACTION=retrieve
+003100161027          PRIORITY=30.
+003200161027F9=Retrieve
+003300161027:KEYI     KEY=F10
+003400161027          help=help
+003500161027          PRIORITY=40
+003600161027          ACTION='cmd dspjoblog'.
+003700161027F10=Job log
+003800161027:KEYI     KEY=F12
+003900161027          help=help
+004000161027          PRIORITY=30
+004100161027          ACTION='cancel set'.
+004200161027F12=Cancel
+004300161027:KEYI     KEY=F14
+004400161027          help=help
+004500161027          PRIORITY=25
+004600161027          ACTION='cmd wrksbmjob *user'.
+004700161027F14=Submitted jobs
+004800161027:KEYI     KEY=F24
+004900161027          help=help
+005000161027          ACTION=MOREKEYS.
+005100161027F24=More keys
+005200161027:KEYI     KEY=ENTER
+005300161027          help=help
+005400161027          ACTION=ENTER.
+005500161027:KEYI     KEY=HELP
+005600161027          HELP=help
+005700161027          ACTION=HELP.
+005800161027:KEYI     KEY=PAGEDOWN
+005900161027          help=help
+006000161027          ACTION=PAGEDOWN.
+006100161027:KEYI     KEY=PAGEUP
+006200161027          help=help
+006300161027          ACTION=PAGEUP.
+006400161027:KEYI     KEY=PRINT
+006500161027          help=help
+006600161027          ACTION=PRINT.
+006700161027:EKEYL.
+006800161027:panel name=SAMPLE
+006900161027help=h
+007000161027keyl=key01
+007100161027Enter='msg cpd9817 qcpfmsg'
+007200161027panelid=zmenu
+007300161027topsep=sysnam.
+007400161027Arcad Sample Application
+007500161027:menu depth='*'
+007600161027scroll=Yes
+007700161027Botsep=none.
+007800161027:Topinst.Select one of the following:
+007801161027:menugrp.Master files
+007900161027:menui option=1
+008000161027       action='cmd call ART200'
+008100161027       help=srt200.
+008200161209Work with Articles                                          ART200
+008201161027:menui option=2
+008202161027       action='cmd call CUS200'
+008203161027       help=cus200.
+008204161209Work with Customers                                         CUS200
+008205161027:menui option=3
+008206161027       action='cmd call ORD201'
+008207161027       help=cus200.
+008208161209Work with Customer Orders                                   ORD201
+008209161027:menui option=4
+008210161027       action='cmd call pro200'
+008211161027       help=pro200.
+008212161209Work with Providers                                         PRO200
+008213161104:menui option=5
+008214161104       action='cmd call pro201'
+008215161104       help=pro200.
+008216161209Display Providers                                           PRO201
+008217161129:menui option=6
+008218161129       action='cmd call ORD100C2'
+008219161129       help=ord100.
+008220161209Create a Customer Order.                                    ORD100
+008221161027:emenugrp.
+008222161209:menugrp.Reports
+008223161216:menui  option=10
+008224161209        action='cmd call pro203'
+008225161209        help=nohelp.
+008226161209Article to purchase                                         PRO203
+008227161216:menui  option=11
+008228161216        action='cmd STRQMQRY QMQRY(CUSQRY) QMFORM(CUSQRYFMT)'
+008229161216        help=nohelp.
+008230161216Customer with Open Order                              QMQRY:CUSQRY
+008231161216:menui  option=12
+008232161216        action='cmd STRQMQRY QMQRY(ARTQRY) '
+008233161216        help=nohelp.
+008234161216Article by Last Order Date                            QMQRY:ARTQRY
+008235161209:emenugrp.
+008236161104:menugrp.Utilities
+008400161216:menui  option=20
+008500161027        action='cmd call par200'
+008600161209        help=nohelp.
+008700161209Work with Parameters                                        PAR200
+008800161216:menui  option=21
+008900161027        action='cmd call cou200'
+009000161209        help=nohelp.
+009100161209Work with countries                                         COU200
+009101161209:menui  option=80
+009102161209        action='cmd call ord900'
+009103161209        help=nohelp.
+009104161209Reset LASTORDNO                                             ORD900
+009105161209:menui  option=81
+009106161209        action='cmd call ord901'
+009107161209        help=nohelp.
+009108161209Reset Order dates to current                                ORD901
+009109161209:menui  option=82
+009110161209        action='cmd call art801'
+009111161104        help=nohelp.
+009112161216Reset Summary Fields                                 SQLPRC:ART801
+009113161209:menui  option=83
+009114161209        action='cmd call par201'
+009115161209        help=nohelp.
+009116161209Work with IFS output                                        PAR201
+009117161216:menui  option=84
+009118161216        action='cmd adspusrspc samlog'
+009119161216        help=nohelp.
+009120161216Display Application log
+009121161104:emenugrp.
+009700161027:menui  option=90
+009800161027        action='cmd signoff'
+009900161027        help=nohelp.
+010000161027Signoff
+010100161027:emenu.
+010200161027:cmdline size=long.
+010300161027Selection or command
+010400161027:epanel.
+010500161027:epnlgrp.

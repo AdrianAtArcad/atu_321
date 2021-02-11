@@ -1,0 +1,6 @@
+000100161024                                            REF(SAMREF)
+000200000713                R FCUST
+000300161024                  CACUID    R               REFFLD(CUID)
+000400161024                  CAADID    R               REFFLD(ADID)
+000500161024                  CATYPE         5
+000600161024                  CADEL     R               REFFLD(DLCODE)

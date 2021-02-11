@@ -1,0 +1,18 @@
+000100161027:pnlgrp.
+000200161027:help name=ART200.Work with Articles
+000300161027:p.Text
+000500161027:ehelp.
+000501161027:help name=CUS200.Work with Customers
+000502161027:p.Text
+000503161027:ehelp.
+000504161027:help name=PRO200.Work with Provider
+000505161027:p.Text
+000506161027:ehelp.
+000507161027:help name=NOHELP.Help
+000508161027:p.Help not available
+000509161027:ehelp.
+000510161027:help name=help.Help
+000511161027:p.Help not available
+000512161027:ehelp.
+000513161027
+000600161027:epnlgrp.

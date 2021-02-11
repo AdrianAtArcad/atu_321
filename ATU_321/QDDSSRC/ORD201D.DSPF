@@ -1,0 +1,93 @@
+000019161221     A*%%TS  SD  20161221  160008  VTAQUIN     REL-V7R1M0  5770-WDS
+000200161221     A*%%EC
+000210161221     A                                      DSPSIZ(24 80 *DS3)
+000220161221     A                                      INDARA
+000230161221     A                                      CA03(03)
+000240161221     A                                      CA12(12)
+000250161221     A                                      PRINT
+000260161221     A                                      ERRSFL
+000270161221     A          R SFL01                     SFL
+000280161221     A*%%TS  SD  20161221  160008  VTAQUIN     REL-V7R1M0  5770-WDS
+000290161221     A  33                                  SFLNXTCHG
+000300161221     A            OPT01          2Y 0B  7  3
+000310161221     A  34                                  DSPATR(RI)
+000320161221     A  34                                  DSPATR(PC)
+000330161221     A                                      EDTCDE(Z)
+000340161221     A            ORID      R        O  7  6REFFLD(FORDE/ORID *LIBL/ORDER)
+000350161221     A                                      EDTCDE(2)
+000360161221     A            ORYEAR    R        O  7 14REFFLD(FORDE/ORYEAR *LIBL/ORDER)
+000370161221     A                                      EDTCDE(Z)
+000380161221     A            DATCLO          L  O  7 57DATFMT(*JOB)
+000390161221     A                                      MAPVAL(('1940-01-01' *BLANK))
+000400161221     A            SUMORD        11Y 2O  7 31EDTCDE(2)
+000410161221     A            CUID      R        O  8  6REFFLD(FCUST/CUID *LIBL/CUSTOMER)
+000420161221     A            CUSTNM    R        O  8 12REFFLD(FCUST/CUSTNM *LIBL/CUSTOMER)
+000430161221     A            DATORD          L  O  7 19DATFMT(*JOB)
+000440161221     A            DATLIV          L  O  7 46DATFMT(*JOB)
+000450161221     A                                      MAPVAL(('1940-01-01' *BLANK))
+000460161221     A          R CTL01                     SFLCTL(SFL01)
+000470161221     A*%%TS  SD  20161221  160008  VTAQUIN     REL-V7R1M0  5770-WDS
+000480161221     A                                      SFLSIZ(0015)
+000490161221     A                                      SFLPAG(0007)
+000500161221     A N80                                  PAGEDOWN(25 'dynamic subfile')
+000510161221     A                                      CF06(06 'Create')
+000520161221     A                                      CA05(05 'Refresh')
+000530161221     A                                      OVERLAY
+000540161221     A  31                                  SFLDSP
+000550161221     A  32                                  SFLDSPCTL
+000560161221     A  30                                  SFLCLR
+000570161221     A  80                                  SFLEND(*MORE)
+000580161221     A                                      SFLDROP(CF11)
+000590161221     A  35                                  SFLMSG('Invalid Option' 35)
+000600161221     A  36                                  SFLMSG('Closed order can not be edi-
+000610161221     A                                      ted or deleted' 36)
+000620161221     A  37                                  SFLMSG('Order whith deliveries can -
+000630161221     A                                      not be deleted' 37)
+000640161221     A            RRB01          4S 0H      SFLRCDNBR
+000650161221     A                                  1  2'ORD200-1'
+000660161221     A                                      COLOR(BLU)
+000670161221     A                                  3  4'Type options, press Enter.'
+000680161221     A                                      COLOR(BLU)
+000690161221     A                                  6  2'Opt'
+000700161221     A                                      DSPATR(HI)
+000710161221     A                                  1 27'Work with Customer Orders'
+000720161221     A                                      DSPATR(HI)
+000730161221     A                                  1 68DATE
+000740161221     A                                      EDTCDE(Y)
+000750161221     A                                  2 68TIME
+000760161221     A                                  4  7'2=Edit'
+000770161221     A                                      COLOR(BLU)
+000780161221     A                                  4 30'5=Display'
+000790161221     A                                      COLOR(BLU)
+000800161221     A                                  4 18'4=Delete'
+000810161221     A                                      COLOR(BLU)
+000820161221     A                                  4 43'6=Print'
+000830161221     A                                      COLOR(BLU)
+000840161221     A                                  4 56'7=Close'
+000850161221     A                                      COLOR(BLU)
+000860161221     A                                  6  8'Order'
+000870161221     A                                      DSPATR(HI)
+000880161221     A                                  6 14'Year'
+000890161221     A                                      DSPATR(HI)
+000900161221     A                                  6 19'Creation'
+000910161221     A                                      DSPATR(HI)
+000920161221     A                                  6 46'Delivery'
+000930161221     A                                      DSPATR(HI)
+000940161221     A                                  6 57'Close'
+000950161221     A                                      DSPATR(HI)
+000960161221     A                                  6 37'Value'
+000970161221     A                                      DSPATR(HI)
+000980161221     A                                  4 68'8=Deliver'
+000990161221     A                                      COLOR(BLU)
+001000161209     A          R KEY01
+001010161209     A*%%TS  SD  20161209  163300  VTAQUIN     REL-V7R1M0  5770-WDS
+001020161209     A                                 23  3'F3=Exit'
+001030161209     A                                      COLOR(BLU)
+001040161209     A                                 23 55'F12=Cancel'
+001050161209     A                                      COLOR(BLU)
+001060161209     A                                 23 42'F11=Detail'
+001070161209     A                                      COLOR(BLU)
+001080161209     A                                 23 14'F5=Refresh'
+001090161209     A                                      COLOR(BLU)
+001100161209     A                                 23 28'F6=Create'
+001110161209     A                                      COLOR(BLU)

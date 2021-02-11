@@ -1,0 +1,20 @@
+000100161025                                            REF(SAMREF)
+000200000714                R FDETO
+000300161025                  ODORID    R               REFFLD(ORID)
+000400161025                  ODYEAR    R               REFFLD(YEAR)
+000500161025                  ODLINE    R
+000600161025                  ODARID    R               REFFLD(ARID)
+000800161025                  ODQTY     R               TEXT('ORDERED QUANTITY')
+000801161025                                            COLHDG('ORDER' 'QUANTITY')
+000802161025                                            REFFLD(QUANTITY)
+000803161025                  ODQTYLIV  R               TEXT('DELIVERED QUANTITY')
+000804161025                                            COLHDG('DELIV' 'QUANTITY')
+000805161025                                            REFFLD(QUANTITY)
+000900161025                  ODPRICE   R               REFFLD(UNITPRICE)
+001000161025                  ODTOT     R               REFFLD(TOTPRICE)
+001100161027                  ODTOTVAT  R               REFFLD(TOTPRICE)
+001200161027                                            TEXT('TOTAL LINE WITH VAT')
+001300161027                                            COLHDG('TOTAL LINE' 'WITH VAT')
+001400161129                K ODLINE
+001500161129                K ODORID
+001600161129                K ODYEAR

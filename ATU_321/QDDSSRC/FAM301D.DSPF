@@ -1,0 +1,77 @@
+000010161025     A*%%TS  SD  20161025  132922  VTAQUIN     REL-V7R1M0  5770-WDS
+000020161025     A*%%EC
+000030161025     A                                      DSPSIZ(24 80 *DS3)
+000040161025     A                                      INDARA
+000050161025     A                                      PRINT
+000060161025     A                                      ERRSFL
+000070161025     A                                      CA03(03)
+000080161025     A                                      CA12(12)
+000090161025     A          R DUMMY
+000100161025     A                                      KEEP
+000110161025     A                                      ASSUME
+000120161025     A                                      OVERLAY
+000130161025     A                                      PUTOVR
+000140161025     A            FLD001         1   O 23 79
+000150161025     A          R SFL01                     SFL
+000160161025     A*%%TS  SD  20161025  121722  VTAQUIN     REL-V7R1M0  5770-WDS
+000170161025     A  33                                  SFLNXTCHG
+000180161025     A            OPT01          1Y 0B  6  3
+000190161025     A  34                                  DSPATR(RI)
+000200161025     A  34                                  DSPATR(PC)
+000210161025     A                                      EDTCDE(Z)
+000220161025     A            FAID      R        O  6  5REFFLD(FAID FAMILLY)
+000230161025     A            FADESC    R        O  6  9REFFLD(FFAMI/FADESC *LIBL/FAMILLY)
+000240161025     A          R CTL01                     SFLCTL(SFL01)
+000250161025     A*%%TS  SD  20161025  132922  VTAQUIN     REL-V7R1M0  5770-WDS
+000260161025     A                                      SFLSIZ(0011)
+000270161025     A                                      SFLPAG(0010)
+000280161025     A                                      WINDOW(KEY01)
+000290161025     A                                      CF08(08)
+000300161025     A N80                                  PAGEDOWN(25 'dynamic subfile')
+000310161025     A                                      OVERLAY
+000320161025     A  31                                  SFLDSP
+000330161025     A  32                                  SFLDSPCTL
+000340161025     A  30                                  SFLCLR
+000350161025     A  80                                  SFLEND(*MORE)
+000360161025     A  35                                  SFLMSG('INVALID OPTION' 35)
+000370161025     A  36                                  SFLMSG('ONLY ONE SELECTION' 36)
+000380161025     A            RRB01          4S 0H      SFLRCDNBR
+000390161025     A                                  1 22'Select a Familly Code'
+000400161025     A                                      DSPATR(HI)
+000410161025     A                                  2  2'Make a selection. Press Enter'
+000420161025     A                                      COLOR(BLU)
+000430161025     A                                  3  3'1=Select'
+000440161025     A                                      COLOR(BLU)
+000450161025     A                                  4  2'Opt'
+000460161025     A                                      DSPATR(HI)
+000470161025     A            OPTC1          1Y 0B  5  3EDTCDE(Z)
+000480161025     A  41                                  ERRMSG('Invalid option' 41)
+000490161025     A  42                                  ERRMSG('Position to not available w-
+000500161025     A                                      ith selection pending' 42)
+000510161025     A                                  3 19'8=Position to'
+000520161025     A                                      COLOR(BLU)
+000530161025     A                                  4  6'Code'
+000540161025     A                                      DSPATR(HI)
+000550161025     A                                  4 13'Description'
+000560161025     A                                      DSPATR(HI)
+000570161025     A            POSCOD    R        B  5  5REFFLD(FAID FAMILLY)
+000580161025     A  40                                  DSPATR(ND)
+000590161025     A  40                                  DSPATR(PR)
+000600161025     A                                  1  1'FAM301'
+000610161025     A                                      COLOR(BLU)
+000620161025     A            POSDES    R        B  5  9REFFLD(FADESC FAMILLY)
+000630161025     A N40                                  DSPATR(ND)
+000640161025     A N40                                  DSPATR(PR)
+000650161025     A                                      CHECK(LC)
+000660161025     A          R KEY01
+000670161025     A*%%TS  SD  20161025  132115  VTAQUIN     REL-V7R1M0  5770-WDS
+000680161025     A                                      OVERLAY
+000690161025     A                                      WINDOW(4 13 18 62)
+000700161025     A                                 17  2'F3=Exit'
+000710161025     A                                      COLOR(BLU)
+000720161025     A  40                             17 14'F8=By code'
+000730161025     A                                      COLOR(BLU)
+000740161025     A N40                             17 14'F8=By desc.'
+000750161025     A                                      COLOR(BLU)
+000760161025     A                                 17 27'F12=Cancel'
+000770161025     A                                      COLOR(BLU)

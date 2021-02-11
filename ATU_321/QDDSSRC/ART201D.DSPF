@@ -1,0 +1,93 @@
+000017161201     A*%%TS  SD  20161201  100328  VTAQUIN     REL-V7R1M0  5770-WDS
+000180161201     A*%%EC
+000190161201     A                                      DSPSIZ(24 80 *DS3)
+000200161201     A                                      INDARA
+000210161201     A                                      CA03(03)
+000220161201     A                                      CA12(12)
+000230161201     A                                      PRINT
+000240161201     A                                      ERRSFL
+000250161025     A          R SFL01                     SFL
+000260161025     A*%%TS  SD  20161025  170547  VTAQUIN     REL-V7R1M0  5770-WDS
+000270161025     A  33                                  SFLNXTCHG
+000280161025     A            OPT01          2Y 0B  7  3
+000290161025     A  34                                  DSPATR(RI)
+000300161025     A  34                                  DSPATR(PC)
+000310161025     A                                      EDTCDE(Z)
+000320161025     A            APPRID    R        O  7  7REFFLD(FARPR/APPRID *LIBL/ARTIPROV)
+000330161025     A            PROVNM    R        O  7 13REFFLD(FPROV/PROVNM *LIBL/PROVIDER)
+000340161025     A            APPRICE   R        O  7 44REFFLD(FARPR/APPRICE *LIBL/ARTIPROV)
+000350161025     A                                      EDTCDE(2)
+000360161025     A            APREF     R        O  7 57REFFLD(FARPR/APREF *LIBL/ARTIPROV)
+000370161201     A          R CTL01                     SFLCTL(SFL01)
+000380161201     A*%%TS  SD  20161201  100051  VTAQUIN     REL-V7R1M0  5770-WDS
+000390161201     A                                      CA05(05)
+000400161201     A                                      OVERLAY
+000410161201     A  31                                  SFLDSP
+000420161201     A  32                                  SFLDSPCTL
+000430161201     A  30                                  SFLCLR
+000440161201     A  80                                  SFLEND(*MORE)
+000450161201     A                                      SFLSIZ(0015)
+000460161201     A                                      SFLPAG(0014)
+000470161201     A  35                                  SFLMSG('Invalid Option' 35)
+000480161201     A            RRB01          4S 0H      SFLRCDNBR
+000490161201     A                                  1  2'ART201-1'
+000500161201     A                                      COLOR(BLU)
+000510161201     A                                  3  4'Type options, press Enter.'
+000520161201     A                                      COLOR(BLU)
+000530161201     A                                  6  2'Opt'
+000540161201     A                                      DSPATR(HI)
+000550161201     A                                  1 27'Work with Article Providers'
+000560161201     A                                      DSPATR(HI)
+000570161201     A                                  1 68DATE
+000580161201     A                                      EDTCDE(Y)
+000590161201     A                                  2 68TIME
+000600161201     A                                  4  7'2=Edit'
+000610161201     A                                      COLOR(BLU)
+000620161201     A            APARID    R        O  2  4REFFLD(APARID ARTIPROV)
+000630161201     A            ARDESC    R        O  2 11REFFLD(ARDESC ARTICLE)
+000640161201     A                                  6  7'Provider'
+000650161201     A                                      DSPATR(HI)
+000660161201     A                                  6 44'Unit Price'
+000670161201     A                                      DSPATR(HI)
+000680161201     A                                  6 57'Reference'
+000690161201     A                                      DSPATR(HI)
+000700161201     A          R KEY01
+000710161201     A*%%TS  SD  20161201  100051  VTAQUIN     REL-V7R1M0  5770-WDS
+000720161201     A                                 23  3'F3=Exit'
+000730161201     A                                      COLOR(BLU)
+000740161201     A                                 23 34'F12=Cancel'
+000750161201     A                                      COLOR(BLU)
+000760161201     A                                 23 17'F5=Refresh'
+000770161201     A                                      COLOR(BLU)
+000780161201     A          R FMT02
+000790161201     A*%%TS  SD  20161201  100328  VTAQUIN     REL-V7R1M0  5770-WDS
+000800161201     A                                      CF04(04 'Prompt')
+000810161201     A                                  1  2'ART201-2'
+000820161201     A                                      COLOR(BLU)
+000830161201     A                                  3  4'Type choices, press Enter.'
+000840161201     A                                      COLOR(BLU)
+000850161201     A                                 23  3'F3=Exit'
+000860161201     A                                      COLOR(BLU)
+000870161201     A                                 23 19'F12=Cancel'
+000880161201     A                                      COLOR(BLU)
+000890161201     A                                  1 32'ARTIPROV definition'
+000900161201     A                                      DSPATR(HI)
+000910161201     A                                  5  4'Article  . . . . . . . :'
+000920161201     A            ARDESC    R        O  6 29REFFLD(ARDESC ARTICLE)
+000930161201     A                                  9  4'Unit Price   . . . . . .'
+000940161201     A                                 10  4'Provider Reference . . .'
+000950161201     A                                  7  4'Provider'
+000960161201     A                                  7 13'.'
+000970161201     A                                  7 15'.'
+000980161201     A                                  7 17'.'
+000990161201     A                                  7 19'.'
+001000161201     A                                  7 21'.'
+001010161201     A                                  7 23'.'
+001020161201     A                                  7 25'.'
+001030161201     A                                  7 27':'
+001040161201     A            APARID    R        O  5 29REFFLD(APARID ARTIPROV)
+001050161201     A            APPRICE   R        B  9 29REFFLD(FARPR/APPRICE *LIBL/ARTIPROV)
+001060161201     A                                      EDTCDE(2)
+001070161201     A            APREF     R        B 10 29REFFLD(FARPR/APREF *LIBL/ARTIPROV)
+001080161201     A            APPRID    R        O  7 29REFFLD(FARPR/APPRID *LIBL/ARTIPROV)
+001090161201     A            PROVNM    R        O  8 29REFFLD(FPROV/PROVNM *LIBL/PROVIDER)

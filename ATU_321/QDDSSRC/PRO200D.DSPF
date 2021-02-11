@@ -1,0 +1,100 @@
+000017161201     A*%%TS  SD  20161201  160417  VTAQUIN     REL-V7R1M0  5770-WDS
+000180161201     A*%%EC
+000190161201     A                                      DSPSIZ(24 80 *DS3)
+000200161201     A                                      INDARA
+000210161201     A                                      CA03(03)
+000220161201     A                                      CA12(12)
+000230161201     A                                      PRINT
+000240161201     A                                      ERRSFL
+000250161025     A          R SFL01                     SFL
+000260161025     A*%%TS  SD  20161025  103254  VTAQUIN     REL-V7R1M0  5770-WDS
+000270161025     A  33                                  SFLNXTCHG
+000280161025     A            OPT01          2Y 0B  7  3
+000290161025     A  34                                  DSPATR(RI)
+000300161025     A  34                                  DSPATR(PC)
+000310161025     A                                      EDTCDE(Z)
+000320161025     A            PRID      R        O  7  7REFFLD( PRID  PROVIDER)
+000330161025     A            PROVNM    R        O  7 13REFFLD( PROVNM  PROVIDER)
+000340161025     A            PRCITY    R        O  7 44REFFLD( PRCITY PROVIDER)
+000350161025     A            PRDEL     R        O  7 75REFFLD( PRDEL  PROVIDER)
+000360161201     A          R CTL01                     SFLCTL(SFL01)
+000370161201     A*%%TS  SD  20161201  160417  VTAQUIN     REL-V7R1M0  5770-WDS
+000380161201     A                                      SFLSIZ(0015)
+000390161201     A                                      SFLPAG(0014)
+000400161201     A N80                                  PAGEDOWN(25 'dynamic subfile')
+000410161201     A                                      OVERLAY
+000420161201     A  31                                  SFLDSP
+000430161201     A  32                                  SFLDSPCTL
+000440161201     A  30                                  SFLCLR
+000450161201     A  80                                  SFLEND(*MORE)
+000460161201     A  35                                  SFLMSG('Invalid Option' 35)
+000470161201     A            RRB01          4S 0H      SFLRCDNBR
+000480161201     A                                  1  2'PRO200-1'
+000490161201     A                                      COLOR(BLU)
+000500161201     A                                  3  4'Type options, press Enter.'
+000510161201     A                                      COLOR(BLU)
+000520161201     A                                  6  3'Opt'
+000530161201     A                                      DSPATR(HI)
+000540161201     A                                  1 31'Work with Providers'
+000550161201     A                                      DSPATR(HI)
+000560161201     A                                  1 70DATE
+000570161201     A                                      EDTCDE(Y)
+000580161201     A                                  2 70TIME
+000590161201     A                                  4  6'2=Edit'
+000600161201     A                                      COLOR(BLU)
+000610161201     A                                  4 17'5=Items '
+000620161201     A                                      COLOR(BLU)
+000630161201     A                                  6  7'Id'
+000640161201     A                                      DSPATR(HI)
+000650161201     A                                  6 13'Provider'
+000660161201     A                                      DSPATR(HI)
+000670161201     A                                  6 44'City'
+000680161201     A                                      DSPATR(HI)
+000690161201     A                                  6 74'Del'
+000700161201     A                                      DSPATR(HI)
+000710161201     A                                  4 30'7=Prepare Order'
+000720161201     A                                      COLOR(BLU)
+000730161025     A          R KEY01
+000740161025     A                                 23  3'F3=Exit'
+000750161025     A                                      COLOR(BLU)
+000760161025     A                                 23 19'F12=Cancel'
+000770161025     A                                      COLOR(BLU)
+000780161025
+000790161025     A          R FMT02
+000800161025     A*%%TS  SD  20161025  163855  VTAQUIN     REL-V7R1M0  5770-WDS
+000810161025     A                                      CF04(04)
+000820161025     A                                  1  2'PRO200-2'
+000830161025     A                                      COLOR(BLU)
+000840161025     A                                  3  4'Type choices, press Enter.'
+000850161025     A                                      COLOR(BLU)
+000860161025     A                                 23  3'F3=Exit'
+000870161025     A                                      COLOR(BLU)
+000880161025     A                                 23 19'F12=Cancel'
+000890161025     A                                      COLOR(BLU)
+000900161025     A                                  1 34'Edit PROVIDER'
+000910161025     A                                      DSPATR(HI)
+000920161025     A                                  1 70DATE
+000930161025     A                                      EDTCDE(Y)
+000940161025     A                                  2 70TIME
+000950161025     A                                  5  3'Provider Id . . . . . :'
+000960161025     A                                  6  3'Name  . . . . . . . . .'
+000970161025     A            PRID      R        O  5 27REFFLD(PRID PROVIDER)
+000980161025     A            PROVNM    R        B  6 27REFFLD(PROVNM PROVIDER)
+000990161025     A  41                                  ERRMSG('The name is mandatory' 41)
+001000161025     A                                  7  3'Phone . . . . . . . . .'
+001010161025     A                                  8  3'Vat N°  . . . . . . . .'
+001020161025     A                                  9  3'eMail . . . . . . . . .'
+001030161025     A            PRMAIL    R        B  9 27REFFLD(PRMAIL PROVIDER)
+001040161025     A            PRPHONE   R        B  7 27REFFLD(PRPHONE PROVIDER)
+001050161025     A            PRVAT     R        B  8 27REFFLD(PRVAT PROVIDER)
+001060161025     A                                 10  3'Address . . . . . . . .'
+001070161025     A            PRLINE1   R        B 10 27REFFLD(PRLINE1 PROVIDER)
+001080161025     A            PRLINE2   R        B 11 27REFFLD(PRLINE2 PROVIDER)
+001090161025     A            PRLINE3   R        B 12 27REFFLD(PRLINE3 PROVIDER)
+001100161025     A            PRZIP     R        B 13 27REFFLD(PRZIP PROVIDER)
+001110161025     A            PRCITY    R        B 13 39REFFLD(PRCITY PROVIDER)
+001120161025     A                                 13  3'Postal Code & City  . .'
+001130161025     A                                 14  3'Country Code  . . . . .'
+001140161025     A            PRCOUN    R        B 14 27REFFLD(PRCOUN PROVIDER)
+001150161025     A  40                                  ERRMSGID(ERR0002 *LIBL/SAMMSGF 40)
+001160161025     A            CONAME        30A  O 14 31

@@ -1,0 +1,100 @@
+000018161209     A*%%TS  SD  20161209  103441  VTAQUIN     REL-V7R1M0  5770-WDS
+000190161209     A* %ATTR RSTDSP(*YES)
+000200161209     A*%%EC
+000210161209     A                                      DSPSIZ(24 80 *DS3)
+000220161209     A                                      INDARA
+000230161209     A                                      CA03(03)
+000240161209     A                                      CA12(12)
+000250161209     A                                      PRINT
+000260161209     A                                      ERRSFL
+000270161201     A          R SFL01                     SFL
+000280161201     A*%%TS  SD  20161201  161051  VTAQUIN     REL-V7R1M0  5770-WDS
+000290161201     A  33                                  SFLNXTCHG
+000300161201     A            ARID      R        O  6  2REFFLD(ARID *LIBL/ARTICLE)
+000310161201     A            NAME25        25A  O  6  9
+000320161201     A            ARSTOCK   R        O  6 35REFFLD(FARTI/ARSTOCK *LIBL/ARTICLE)
+000330161201     A                                      EDTCDE(Z)
+000340161201     A            ARMINQTY  R        O  6 42REFFLD(FARTI/ARMINQTY *LIBL/ARTICLE)
+000350161201     A                                      EDTCDE(Z)
+000360161201     A            ARCUSQTY  R        O  6 49REFFLD(FARTI/ARCUSQTY *LIBL/ARTICLE)
+000370161201     A                                      EDTCDE(Z)
+000380161201     A            ARPURQTY  R        O  6 55REFFLD(FARTI/ARPURQTY *LIBL/ARTICLE)
+000390161201     A                                      EDTCDE(Z)
+000400161201     A            NEWORD         5Y 0O  6 62DSPATR(HI)
+000410161201     A                                      EDTCDE(Z)
+000420161201     A            APPRICE   R        O  6 69REFFLD(FARPR/APPRICE *LIBL/ARTIPROV)
+000430161201     A            APREF     R        H      REFFLD(APREF ARTIPROV)
+000440161201     A            ARDESC    R        H      REFFLD(ARDESC ARTICLE)
+000450161201     A          R CTL01                     SFLCTL(SFL01)
+000460161201     A*%%TS  SD  20161201  160100  VTAQUIN     REL-V7R1M0  5770-WDS
+000470161201     A                                      SFLSIZ(0015)
+000480161201     A                                      SFLPAG(0014)
+000490161201     A N80                                  PAGEDOWN(25 'dynamic subfile')
+000500161201     A                                      CF08(08 'Confirm')
+000510161201     A                                      OVERLAY
+000520161201     A  31                                  SFLDSP
+000530161201     A  32                                  SFLDSPCTL
+000540161201     A  30                                  SFLCLR
+000550161201     A  80                                  SFLEND(*MORE)
+000560161201     A                                      SFLDROP(CF11)
+000570161201     A  35                                  SFLMSG('Invalid Option' 35)
+000580161201     A  36                                  SFLMSG('Closed order can not be edi-
+000590161201     A                                      ted or deleted' 36)
+000600161201     A  37                                  SFLMSG('Order whith deliveries can -
+000610161201     A                                      not be deleted' 37)
+000620161201     A            RRB01          4S 0H      SFLRCDNBR
+000630161201     A                                  1  2'PRO202-1'
+000640161201     A                                      COLOR(BLU)
+000650161201     A                                  1 28'Prepare Purchase Proposal'
+000660161201     A                                      DSPATR(HI)
+000670161201     A                                  1 68DATE
+000680161201     A                                      EDTCDE(Y)
+000690161201     A                                      COLOR(BLU)
+000700161201     A                                  2  4'Provider . . . . :'
+000710161201     A            PRID      R        O  2 23REFFLD(FPROV/PRID *LIBL/PROVIDER)
+000720161201     A            PROVNM    R        O  2 29REFFLD(FPROV/PROVNM *LIBL/PROVIDER)
+000730161201     A                                  2 68TIME
+000740161201     A                                      COLOR(BLU)
+000750161201     A                                  3  4'Press <F8> to confirm.'
+000760161201     A                                      COLOR(BLU)
+000770161201     A                                  4 49'Cust'
+000780161201     A                                      DSPATR(HI)
+000790161201     A                                  4 56'Pur'
+000800161201     A                                      DSPATR(HI)
+000810161201     A                                  4 63'New'
+000820161201     A                                      DSPATR(HI)
+000830161201     A                                  5  2'Article'
+000840161201     A                                      DSPATR(HI)
+000850161201     A                                  5 35'Stock'
+000860161201     A                                      DSPATR(HI)
+000870161201     A                                  5 42'Min'
+000880161201     A                                      DSPATR(HI)
+000890161201     A                                  5 49'Order'
+000900161201     A                                      DSPATR(HI)
+000910161201     A                                  5 55'Order'
+000920161201     A                                      DSPATR(HI)
+000930161201     A                                  5 62'Order'
+000940161201     A                                      DSPATR(HI)
+000950161201     A                                  5 69'U Price'
+000960161201     A                                      DSPATR(HI)
+000970161201     A          R KEY01
+000980161201     A*%%TS  SD  20161201  153426  VTAQUIN     REL-V7R1M0  5770-WDS
+000990161201     A                                 23  3'F3=Exit'
+001000161201     A                                      COLOR(BLU)
+001010161201     A                                 23 32'F12=Cancel'
+001020161201     A                                      COLOR(BLU)
+001030161201     A                                 23 17'F8=Confirm'
+001040161201     A                                      COLOR(BLU)
+001050161209     A          R FMT03
+001060161209     A*%%TS  SD  20161209  103441  VTAQUIN     REL-V7R1M0  5770-WDS
+001070161209     A                                      WINDOW(7 10 7 50)
+001080161209     A                                      WDWBORDER((*CHAR '*-*!!*-*'))
+001090161209     A                                  1 20'Confirmation'
+001100161209     A                                      DSPATR(HI)
+001110161209     A                                  3  2'XML File'
+001120161209     A                                  6  2'Press Enter to continue.'
+001130161209     A                                      COLOR(BLU)
+001140161209     A            FILENAME      30A  O  3 12
+001150161209     A                                  4  2'created'
+001160161209     A                                  4 10'in'
+001170161209     A            PATH          35A  O  4 14

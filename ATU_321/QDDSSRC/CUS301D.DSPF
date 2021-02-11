@@ -1,0 +1,63 @@
+000017161128     A*%%TS  SD  20161128  161956  VTAQUIN     REL-V7R1M0  5770-WDS
+000180161128     A*%%EC
+000190161128     A                                      DSPSIZ(24 80 *DS3)
+000200161128     A                                      REF(*LIBL/CUSTOMER)
+000210161128     A                                      INDARA
+000220161128     A                                      PRINT
+000230161128     A                                      ERRSFL
+000240161128     A                                      CA03(03)
+000250161128     A                                      CA12(12)
+000260161128     A          R SFL01                     SFL
+000270161128     A*%%TS  SD  20161128  161956  VTAQUIN     REL-V7R1M0  5770-WDS
+000280161128     A  33                                  SFLNXTCHG
+000290161128     A            OPT01          1Y 0B  8  3
+000300161128     A  34                                  DSPATR(RI)
+000310161128     A  34                                  DSPATR(PC)
+000320161128     A                                      EDTCDE(Z)
+000330161128     A            CUID      R        O  8  5REFFLD(FCUST/CUID *LIBL/CUSTOMER)
+000340161128     A            CUSTNM    R        O  8 11REFFLD(FCUST/CUSTNM *LIBL/CUSTOMER)
+000350161128     A            CUCITY    R        O  8 42REFFLD(FCUST/CUCITY *LIBL/CUSTOMER)
+000360161128     A            CUCOUN    R        O  8 73REFFLD(FCUST/CUCOUN *LIBL/CUSTOMER)
+000370161128     A          R CTL01                     SFLCTL(SFL01)
+000380161128     A*%%TS  SD  20161128  161956  VTAQUIN     REL-V7R1M0  5770-WDS
+000390161128     A                                      CF08(08)
+000400161128     A N80                                  PAGEDOWN(25 'dynamic subfile')
+000410161128     A                                      OVERLAY
+000420161128     A  31                                  SFLDSP
+000430161128     A  32                                  SFLDSPCTL
+000440161128     A  30                                  SFLCLR
+000450161128     A  80                                  SFLEND(*MORE)
+000460161128     A                                      SFLSIZ(0015)
+000470161128     A                                      SFLPAG(0014)
+000480161128     A  35                                  SFLMSG('INVALID OPTION' 35)
+000490161128     A  36                                  SFLMSG('ONLY ONE SELECTION' 36)
+000500161128     A            RRB01          4S 0H      SFLRCDNBR
+000510161128     A                                  1 32'Select a Customer'
+000520161128     A                                      DSPATR(HI)
+000530161128     A                                  4  3'Make a selection. Press Enter'
+000540161128     A                                      COLOR(BLU)
+000550161128     A                                  5  5'1=Select'
+000560161128     A                                      COLOR(BLU)
+000570161128     A                                  7  2'Opt'
+000580161128     A                                      DSPATR(HI)
+000590161128     A                                  7  6'Code'
+000600161128     A                                      DSPATR(HI)
+000610161128     A                                  1  2'CUS301'
+000620161128     A                                      COLOR(BLU)
+000630161128     A                                  7 11'Name'
+000640161128     A                                      DSPATR(HI)
+000650161128     A                                  7 42'City'
+000660161128     A                                      DSPATR(HI)
+000670161128     A                                  2  3'Name contains  . . . :'
+000680161128     A                                  3  3'City contains  . . . :'
+000690161128     A            SRCHNAME      10   B  2 27
+000700161128     A            SRCHCITY      10   B  3 27
+000710161128     A          R KEY01
+000720161128     A*%%TS  SD  20161128  161956  VTAQUIN     REL-V7R1M0  5770-WDS
+000730161128     A                                      OVERLAY
+000740161128     A                                 23  2'F3=Exit'
+000750161128     A                                      COLOR(BLU)
+000760161128     A  40                             23 14'F8=By code'
+000770161128     A                                      COLOR(BLU)
+000780161128     A                                 23 14'F12=Cancel'
+000790161128     A                                      COLOR(BLU)
