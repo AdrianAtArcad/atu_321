@@ -1,0 +1,17 @@
+000100000717                                            UNIQUE
+000200161024                                            REF(SAMREF)
+000300000714                R FARPR
+000400161024                  APARID    R               REFFLD(ARID)
+000500161024                  APPRID    R               REFFLD(PRID)
+000600161024                  APPRICE   R               REFFLD(UNITPRICE)
+000700000714                                            COLHDG('BUY PRICE')
+000800161024                  APREF         10          TEXT('PROVIDER REFERENCE')
+000900161024                  APCREA          L         TEXT('CREATION DATE')
+001000161024                                            COLHDG('CREAETION' 'DATE')
+001100161024                  APMOD           Z         TEXT('LAST MODIFICATION')
+001200161024                                            COLHDG('LAST' 'MODIFICATION')
+001300161024                  APMODID       10          TEXT('LAS MOD BY')
+001400161024                                            COLHDG('LAST' 'MODIF.' 'BY')
+001500161024                  APDEL     R               REFFLD(DLCODE)
+001600161024                K APPRID
+001700161024                K APARID

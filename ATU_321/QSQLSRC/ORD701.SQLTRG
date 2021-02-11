@@ -1,0 +1,13 @@
+000019161219
+000020161219Create Trigger ORD701_Insert_order
+000021161219After Insert  on order
+000022161219Referencing  New As N
+000023161219
+000024170215For Each Row
+000026161219Program Name ORD701
+000027170215set option sqlPath = *LIBL
+000028161219Begin
+000029170215
+000030161219  Update Customer set culastord = n.ordate
+000031161219         where cuid = N.orcuid;
+000032161219End

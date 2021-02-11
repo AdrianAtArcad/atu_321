@@ -1,0 +1,13 @@
+000018161027                                            REF(SAMREF)
+000100161027     A          R FVAT
+000200161027     A            VATCODE   R
+000300161027     A            VATRATE   R
+000400161027     A            VATDESC       20
+000500161027     A            VATCREA         L         TEXT('CREATION DATE')
+000600161027     A                                      COLHDG('CREAETION' 'DATE')
+000700161027     A            VATMOD          Z         TEXT('LAST MODIFICATION')
+000800161027     A                                      COLHDG('LAST' 'MODIFICATION')
+000900161027     A            VATMODID      10          TEXT('LAS MOD BY')
+001000161027     A                                      COLHDG('LAST' 'MODIF.' 'BY')
+001100161027     A            VATDEL    R               REFFLD(DLCODE)
+001200161027     A          K VATCODE

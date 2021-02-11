@@ -1,0 +1,21 @@
+000100161024                                            REF(SAMREF)
+000200000713                R FPROV
+000300161024                  PRID      R
+000400161024                  PROVNM    R
+000500161024                  PRCONT        30          TEXT('CONTACT PERSON')
+000600161024                  PRPHONE   R               REFFLD(PHONE)
+000700161024                  PRVAT     R               REFFLD(VATNUM)
+000800161024                  PRMAIL    R               REFFLD(EMAIL)
+000900161025                  PRLINE1   R               REFFLD(ADRLINE)
+001000161025                  PRLINE2   R               REFFLD(ADRLINE)
+001100161025                  PRLINE3   R               REFFLD(ADRLINE)
+001200161025                  PRZIP     R               REFFLD(ZIPCOD)
+001300161025                  PRCITY    R               REFFLD(CITY)
+001400161025                  PRCOUN    R               REFFLD(COID)
+001500161024                  PRCREA          L         TEXT('CREATION DATE')
+001600161024                                            COLHDG('CREAETION' 'DATE')
+001700161024                  PRMOD           Z         TEXT('LAST MODIFICATION')
+001800161024                                            COLHDG('LAST' 'MODIFICATION')
+001900161024                  PRMODID       10          TEXT('LAS MOD BY')
+002000161024                                            COLHDG('LAST' 'MODIF.' 'BY')
+002100161024                  PRDEL     R               REFFLD(DLCODE)

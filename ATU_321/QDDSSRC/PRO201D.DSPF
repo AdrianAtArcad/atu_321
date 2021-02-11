@@ -1,0 +1,106 @@
+000017161104     A*%%TS  SD  20161104  151957  VTAQUIN     REL-V7R1M0  5770-WDS
+000180161104     A*%%EC
+000190161104     A                                      DSPSIZ(24 80 *DS3)
+000200161104     A                                      CA03(03)
+000210161104     A                                      CA12(12)
+000220161104     A                                      PRINT
+000230161104     A                                      ERRSFL
+000240161104     A          R SFL01                     SFL
+000250161104     A*%%TS  SD  20161104  151639  VTAQUIN     REL-V7R1M0  5770-WDS
+000260161104     A  33                                  SFLNXTCHG
+000270161104     A            OPT01          2Y 0B  7  3
+000280161104     A  34                                  DSPATR(RI)
+000290161104     A  34                                  DSPATR(PC)
+000300161104     A                                      EDTCDE(Z)
+000310161104     A            PRID      R        O  7  7REFFLD(PRID PROVIDER)
+000320161104     A            PROVNM    R        O  7 13REFFLD(PROVNM PROVIDER)
+000330161104     A            PRCITY    R        O  7 44REFFLD(PRCITY PROVIDER)
+000340161104     A            PRDEL     R        O  7 75REFFLD(PRDEL PROVIDER)
+000350161104     A            PRCONT    R        H      REFFLD(FPROV/PRCONT *LIBL/PROVIDER)
+000360161104     A            PRPHONE   R        H      REFFLD(FPROV/PRPHONE *LIBL/PROVIDER)
+000370161104     A            PRVAT     R        H      REFFLD(FPROV/PRVAT *LIBL/PROVIDER)
+000380161104     A            PRMAIL    R        H      REFFLD(FPROV/PRMAIL *LIBL/PROVIDER)
+000390161104     A            PRLINE1   R        H      REFFLD(FPROV/PRLINE1 *LIBL/PROVIDER)
+000400161104     A            PRLINE2   R        H      REFFLD(FPROV/PRLINE2 *LIBL/PROVIDER)
+000410161104     A            PRLINE3   R        H      REFFLD(FPROV/PRLINE3 *LIBL/PROVIDER)
+000420161104     A            PRZIP     R        H      REFFLD(FPROV/PRZIP *LIBL/PROVIDER)
+000430161104     A            PRCREA    R        H      REFFLD(FPROV/PRCREA *LIBL/PROVIDER)
+000440161104     A          R CTL01                     SFLCTL(SFL01)
+000450161104     A*%%TS  SD  20161104  151957  VTAQUIN     REL-V7R1M0  5770-WDS
+000460161104     A                                      SFLSIZ(0015)
+000470161104     A                                      SFLPAG(0014)
+000480161104     A N80                                  PAGEDOWN
+000490161104     A                                      OVERLAY
+000500161104     A  31                                  SFLDSP
+000510161104     A  32                                  SFLDSPCTL
+000520161104     A  30                                  SFLCLR
+000530161104     A  80                                  SFLEND(*MORE)
+000540161104     A  35                                  SFLMSG('Invalid Option')
+000550161104     A            RRB01          4S 0H      SFLRCDNBR
+000560161104     A                                  1  2'PRO201-1'
+000570161104     A                                      COLOR(BLU)
+000580161104     A                                  3  4'Type options, press Enter.'
+000590161104     A                                      COLOR(BLU)
+000600161104     A                                  6  3'Opt'
+000610161104     A                                      DSPATR(HI)
+000620161104     A                                  1 70DATE
+000630161104     A                                      EDTCDE(Y)
+000640161104     A                                  2 70TIME
+000650161104     A                                  4  6'2=Display'
+000660161104     A                                      COLOR(BLU)
+000670161104     A                                  4 17'5=Items '
+000680161104     A                                      COLOR(BLU)
+000690161104     A                                  6  7'Id'
+000700161104     A                                      DSPATR(HI)
+000710161104     A                                  6 13'Provider'
+000720161104     A                                      DSPATR(HI)
+000730161104     A                                  6 44'City'
+000740161104     A                                      DSPATR(HI)
+000750161104     A                                  6 74'Del'
+000760161104     A                                      DSPATR(HI)
+000770161104     A                                  1 32'Display Providers'
+000780161104     A                                      DSPATR(HI)
+000790161025     A          R KEY01
+000800161025     A                                 23  3'F3=Exit'
+000810161025     A                                      COLOR(BLU)
+000820161025     A                                 23 19'F12=Cancel'
+000830161025     A                                      COLOR(BLU)
+000840161025
+000850161104     A          R FMT02
+000860161104     A*%%TS  SD  20161104  151957  VTAQUIN     REL-V7R1M0  5770-WDS
+000870161104     A                                      CF04(04)
+000880161104     A                                  1  2'PRO201-2'
+000890161104     A                                      COLOR(BLU)
+000900161104     A                                  3  4'Type choices, press Enter.'
+000910161104     A                                      COLOR(BLU)
+000920161104     A                                 23  3'F3=Exit'
+000930161104     A                                      COLOR(BLU)
+000940161104     A                                 23 19'F12=Cancel'
+000950161104     A                                      COLOR(BLU)
+000960161104     A                                  1 70DATE
+000970161104     A                                      EDTCDE(Y)
+000980161104     A                                  2 70TIME
+000990161104     A                                  5  3'Provider Id . . . . . :'
+001000161104     A                                  6  3'Name  . . . . . . . . :'
+001010161104     A            PRID      R        O  5 27REFFLD(PRID PROVIDER)
+001020161104     A            PROVNM    R        O  6 27REFFLD(PROVNM PROVIDER)
+001030161104     A  41                                  ERRMSG('The name is mandatory' 41)
+001040161104     A                                  7  3'Phone . . . . . . . . :'
+001050161104     A                                  8  3'Vat N°  . . . . . . . :'
+001060161104     A                                  9  3'eMail . . . . . . . . :'
+001070161104     A            PRMAIL    R        O  9 27REFFLD(PRMAIL PROVIDER)
+001080161104     A            PRPHONE   R        O  7 27REFFLD(PRPHONE PROVIDER)
+001090161104     A            PRVAT     R        O  8 27REFFLD(PRVAT PROVIDER)
+001100161104     A                                 10  3'Address . . . . . . . :'
+001110161104     A            PRLINE1   R        O 10 27REFFLD(PRLINE1 PROVIDER)
+001120161104     A            PRLINE2   R        O 11 27REFFLD(PRLINE2 PROVIDER)
+001130161104     A            PRLINE3   R        O 12 27REFFLD(PRLINE3 PROVIDER)
+001140161104     A            PRZIP     R        O 13 27REFFLD(PRZIP PROVIDER)
+001150161104     A            PRCITY    R        O 13 39REFFLD(PRCITY PROVIDER)
+001160161104     A                                 13  3'Postal Code & City  . :'
+001170161104     A                                 14  3'Country Code  . . . . :'
+001180161104     A            PRCOUN    R        O 14 27REFFLD(PRCOUN PROVIDER)
+001190161104     A  40                                  ERRMSGID(ERR0002 *LIBL/SAMMSGF 40)
+001200161104     A            CONAME        30A  O 14 31
+001210161104     A                                  1 33'Display Provider'
+001220161104     A                                      DSPATR(HI)

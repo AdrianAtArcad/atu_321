@@ -1,0 +1,71 @@
+000017161129     A*%%TS  SD  20161129  155718  VTAQUIN     REL-V7R1M0  5770-WDS
+000180161129     A*%%EC
+000190161129     A                                      DSPSIZ(24 80 *DS3)
+000200161129     A                                      REF(*LIBL/ARTICLE)
+000210161129     A                                      INDARA
+000220161129     A                                      PRINT
+000230161129     A                                      ERRSFL
+000240161129     A                                      CA03(03)
+000250161129     A                                      CA12(12)
+000260161129     A          R SFL01                     SFL
+000270161129     A*%%TS  SD  20161129  105751  VTAQUIN     REL-V7R1M0  5770-WDS
+000280161129     A  33                                  SFLNXTCHG
+000290161129     A            OPT01          1Y 0B  8  3
+000300161129     A  34                                  DSPATR(RI)
+000310161129     A  34                                  DSPATR(PC)
+000320161129     A                                      EDTCDE(Z)
+000330161129     A            ARID      R        O  8  5REFFLD(ARID ARTICLE)
+000340161129     A            ARDESC    R        O  8 12REFFLD(FARTI/ARDESC *LIBL/ARTICLE)
+000350161129     A            ARTIFA    R        O  8 63REFFLD(FARTI/ARTIFA *LIBL/ARTICLE)
+000360161129     A            ARSALEPR  R        O  8 67REFFLD(FARTI/ARSALEPR *LIBL/ARTICLE)
+000370161129     A          R CTL01                     SFLCTL(SFL01)
+000380161129     A*%%TS  SD  20161129  155718  VTAQUIN     REL-V7R1M0  5770-WDS
+000390161129     A                                      SFLSIZ(0015)
+000400161129     A                                      SFLPAG(0014)
+000410161129     A N80                                  PAGEDOWN(25 'dynamic subfile')
+000420161129     A                                      CF04(04)
+000430161129     A                                      OVERLAY
+000440161129     A  31                                  SFLDSP
+000450161129     A  32                                  SFLDSPCTL
+000460161129     A  30                                  SFLCLR
+000470161129     A  80                                  SFLEND(*MORE)
+000480161129     A  35                                  SFLMSG('INVALID OPTION' 35)
+000490161129     A  36                                  SFLMSG('ONLY ONE SELECTION' 36)
+000500161129     A            RRB01          4S 0H      SFLRCDNBR
+000510161129     A                                  1 32'Select an Article'
+000520161129     A                                      DSPATR(HI)
+000530161129     A                                  4  3'Make a selection. Press Enter'
+000540161129     A                                      COLOR(BLU)
+000550161129     A                                  5  5'1=Select'
+000560161129     A                                      COLOR(BLU)
+000570161129     A                                  7  2'Opt'
+000580161129     A                                      DSPATR(HI)
+000590161129     A                                  7  6'Code'
+000600161129     A                                      DSPATR(HI)
+000610161129     A                                  1  2'ART301'
+000620161129     A                                      COLOR(BLU)
+000630161129     A                                  2  3'Desc contains  . . . :'
+000640161129     A                                  3  3'Family . . . . . . . :'
+000650161129     A            SRCHDESC      10A  B  2 27
+000660161129     A                                  7 12'Description'
+000670161129     A                                      DSPATR(HI)
+000680161129     A                                  7 63'Fam'
+000690161129     A                                      DSPATR(HI)
+000700161129     A                                  7 68'Price'
+000710161129     A                                      DSPATR(HI)
+000720161129     A            SRCHFAM   R        B  3 27REFFLD(FARTI/ARTIFA *LIBL/ARTICLE)
+000730161129     A                                  1 70DATE
+000740161129     A                                      EDTCDE(Y)
+000750161129     A                                      COLOR(BLU)
+000760161129     A                                  2 70TIME
+000770161129     A                                      COLOR(BLU)
+000780161129     A            FAMDESC       20A  O  3 33
+000790161129     A          R KEY01
+000800161129     A*%%TS  SD  20161129  155218  VTAQUIN     REL-V7R1M0  5770-WDS
+000810161129     A                                      OVERLAY
+000820161129     A                                 23  2'F3=Exit'
+000830161129     A                                      COLOR(BLU)
+000840161129     A                                 23 29'F12=Cancel'
+000850161129     A                                      COLOR(BLU)
+000860161129     A                                 23 14'F4=Prompt'
+000870161129     A                                      COLOR(BLU)

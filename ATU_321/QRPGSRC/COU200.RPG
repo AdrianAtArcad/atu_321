@@ -1,0 +1,135 @@
+000100161104     FCOU200D CF  E                    WORKSTN      KINFDS INFDS
+000200161104     F                                        RRN01 KSFILE SFL01
+000300161104      *
+000400161104     FCOUNTRY UF  E           K        DISK
+000401161104      * SCREEN INFORMATION DS.
+000402161104     IINFDS       DS
+000403161104     I                                    B 378 3790LRRN
+000404161104      *
+000405161104     C           LOOP      TAG
+000500161104     C           PANEL     CASEQ1         PNL01
+000600161104     C           PANEL     CASEQ2         PNL02
+000800161104     C                     ENDCS
+000801161104     C           PANEL     CABEQ0         ENDPGM
+000802161104     C                     GOTO LOOP
+000803161104     C           ENDPGM    TAG
+000804161104     C                     SETON                     LR
+000805161104      *
+000900161104     C           PNL01     BEGSR
+000901161104     C           STEP01    CASEQ'PRP'     S01PRP
+000902161104     C           STEP01    CASEQ'LOD'     S01LOD
+000903161104     C           STEP01    CASEQ'DSP'     S01DSP
+000904161104     C           STEP01    CASEQ'KEY'     S01KEY
+000905161104     C           STEP01    CASEQ'CHK'     S01CHK
+000906161104     C           STEP01    CASEQ'ACT'     S01ACT
+000907161104     C                     ENDCS
+001000161104     C                     ENDSR
+001001161104     C           S01PRP    BEGSR
+001002161104     C                     Z-ADD0         RRN01   40
+001003161104     C                     SETON                     30
+001004161104     C                     WRITECTL01
+001005161104     C                     SETOF                     30
+001006161104     C                     MOVE 'LOD'     STEP01
+001008161104     C                     ENDSR
+001009161104     C           S01LOD    BEGSR
+001010161104     C           RRN01     ADD  1         RRB01
+001011161104     C           *LOVAL    SETLLCOUNTRY
+001012161104     C                     READ COUNTRY             N    80
+001013161104     C           *IN80     DOWEQ*OFF
+001014161104     C                     ADD  1         RRN01
+001015161104     C                     WRITESFL01
+001016161104     C                     READ COUNTRY             N    80
+001017161104     C                     ENDDO
+001018161104     C                     MOVE 'DSP'     STEP01
+001019161104     C                     ENDSR
+001020161104     C           S01DSP    BEGSR
+001021161104     C                     SETON                         32
+001022161104     C           RRN01     COMP 0                    31
+001023161104     C                     WRITEKEY01
+001024161104     C                     EXFMTCTL01
+001025161104     C           LRRN      IFGT 0
+001026161104     C                     Z-ADDLRRN      RRB01
+001027161104     C                     ENDIF
+001028161104     C                     MOVE 'KEY'     STEP01
+001029161104     C                     ENDSR
+001030161104     C           S01KEY    BEGSR
+001031161104     C                     SELEC
+001032161104     C           *IN03     WHEQ *ON
+001033161104     C                     Z-ADD0         PANEL
+001034161104     C           *IN12     WHEQ *ON
+001035161104     C                     Z-ADD0         PANEL
+001036161104     C                     OTHER
+001037161104     C                     MOVE 'CHK'     STEP01
+001038161104     C                     ENDSL
+001039161104     C                     ENDSR
+001040161104     C           S01CHK    BEGSR
+001041161104     C                     MOVE 'ACT'     STEP01
+001042161104     C                     MOVE *OFF      ERR01   1
+001043161104     C                     MOVE *ON       *IN33
+001044161104     C                     READCSFL01                    99
+001045161104     C           *IN99     DOWEQ*OFF
+001046161104     C           OPT01     IFNE 0
+001047161104     C           OPT01     ANDNE2
+001048161104     C                     MOVE 'DSP'     STEP01
+001049161104     C                     SETON                     3435
+001050161104     C           ERR01     IFEQ *OFF
+001051161104     C                     Z-ADDRRN01     RRB01
+001052161104     C                     MOVE *ON       ERR01
+001053161104     C                     ENDIF
+001054161104     C                     ENDIF
+001055161104     C                     UPDATSFL01
+001056161104     C                     SETOF                     34
+001057161104     C                     READCSFL01                    99
+001058161104     C                     ENDDO
+001059161104     C                     SETOF                     33
+001060161104     C                     ENDSR
+001061161104     C           S01ACT    BEGSR
+001062161104     C                     READCSFL01                    99
+001063161104     C                     SELEC
+001064161104     C           *IN99     WHEQ *ON
+001065161104     C                     MOVE 'DSP'     STEP01
+001066161104     C           OPT01     WHEQ 2
+001067161104     C                     Z-ADD2         PANEL
+001068161104     C                     MOVE 'PRP'     STEP02
+001069161104     C                     Z-ADD0         OPT01
+001070161104     C                     UPDATSFL01
+001071161104     C                     ENDSL
+001072161104     C                     ENDSR
+001100161104     C           PNL02     BEGSR
+001200161104     C           STEP02    CASEQ'PRP'     S02PRP
+001400161104     C           STEP02    CASEQ'DSP'     S02DSP
+001500161104     C           STEP02    CASEQ'KEY'     S02KEY
+001600161104     C           STEP02    CASEQ'CHK'     S02CHK
+001601161104     C           STEP02    CASEQ'ACT'     S02ACT
+001602161104     C                     ENDCS
+001700161104     C                     ENDSR
+003200161104     C           S02PRP    BEGSR
+003201161104     C                     MOVE 'DSP'     STEP02
+003202161104     C           COID      CHAINCOUNTRY              98
+003300161104     C                     ENDSR
+003600161104     C           S02DSP    BEGSR
+003601161104     C                     EXFMTFMT02
+003602161104     C                     MOVE 'KEY'     STEP02
+003700161104     C                     ENDSR
+003800161104     C           S02KEY    BEGSR
+003801161104     C                     SELEC
+003802161104     C           *IN03     WHEQ *ON
+003803161104     C                     GOTO ENDPGM
+003804161104     C           *IN12     WHEQ *ON
+003805161104     C                     Z-ADD1         PANEL
+003806161104     C                     OTHER
+003807161104     C                     MOVE 'CHK'     STEP02
+003808161104     C                     ENDSL
+003900161104     C                     ENDSR
+004000161104     C           S02CHK    BEGSR
+004001161104     C                     MOVE 'ACT'     STEP02
+004100161104     C                     ENDSR
+004200161104     C           S02ACT    BEGSR
+004201161104     C                     UPDATFCOUN
+004202161104     C                     Z-ADD1         PANEL
+004300161104     C                     ENDSR
+004400161104     C           *INZSR    BEGSR
+004401161104     C                     Z-ADD1         PANEL   10
+004402161104     C                     MOVE 'PRP'     STEP01  3
+004403161104     C                     MOVE 'PRP'     STEP02  3
+004500161104     C                     ENDSR

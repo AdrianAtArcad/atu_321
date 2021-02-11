@@ -1,0 +1,88 @@
+000017161201     A*%%TS  SD  20161201  092910  VTAQUIN     REL-V7R1M0  5770-WDS
+000180161201     A*%%EC
+000190161201     A                                      DSPSIZ(24 80 *DS3)
+000200161201     A                                      INDARA
+000210161201     A                                      CA03(03)
+000220161201     A                                      CA12(12)
+000230161201     A                                      PRINT
+000240161201     A                                      ERRSFL
+000250161201     A          R SFL01                     SFL
+000260161201     A*%%TS  SD  20161201  092045  VTAQUIN     REL-V7R1M0  5770-WDS
+000270161201     A  33                                  SFLNXTCHG
+000280161201     A            ODLINE    R        O  8  2REFFLD(FDETO/ODLINE *LIBL/DETORD)
+000290161201     A                                      EDTCDE(Z)
+000300161201     A            ODARID    R        O  8  8REFFLD(FDETO/ODARID *LIBL/DETORD)
+000310161201     A            ODQTY     R        O  8 15REFFLD(FDETO/ODQTY *LIBL/DETORD)
+000320161201     A                                      EDTCDE(2)
+000330161201     A            ODQTYLIV  R        O  8 22REFFLD(FDETO/ODQTYLIV *LIBL/DETORD)
+000340161201     A                                      EDTCDE(2)
+000350161201     A            ODPRICE   R        O  8 40REFFLD(FDETO/ODPRICE *LIBL/DETORD)
+000360161201     A                                      EDTCDE(2)
+000370161201     A            ODTOT     R        O  8 50REFFLD(FDETO/ODTOT *LIBL/DETORD)
+000380161201     A                                      EDTCDE(2)
+000390161201     A            ODTOTVAT  R        O  8 63REFFLD(FDETO/ODTOTVAT *LIBL/DETORD)
+000400161201     A                                      EDTCDE(2)
+000410161201     A            ARDESC    R        O  9  8REFFLD(FARTI/ARDESC *LIBL/ARTICLE)
+000420161201     A          R CTL01                     SFLCTL(SFL01)
+000430161201     A*%%TS  SD  20161201  092850  VTAQUIN     REL-V7R1M0  5770-WDS
+000440161201     A                                      CF06(06 'Create')
+000450161201     A                                      CA05(05 'Refresh')
+000460161201     A                                      OVERLAY
+000470161201     A  31                                  SFLDSP
+000480161201     A  32                                  SFLDSPCTL
+000490161201     A  30                                  SFLCLR
+000500161201     A  80                                  SFLEND(*MORE)
+000510161201     A                                      SFLDROP(CF11)
+000520161201     A                                      SFLSIZ(0007)
+000530161201     A                                      SFLPAG(0006)
+000540161201     A  35                                  SFLMSG('Invalid Option' 35)
+000550161201     A            RRB01          4S 0H      SFLRCDNBR
+000560161201     A                                  1  2'ORD202-1'
+000570161201     A                                      COLOR(BLU)
+000580161201     A                                  1 27'Display a Customer Orders'
+000590161201     A                                      DSPATR(HI)
+000600161201     A                                  1 68DATE
+000610161201     A                                      EDTCDE(Y)
+000620161201     A                                  2 68TIME
+000630161201     A                                  2  2'Order . . .'
+000640161201     A            ORID      R        O  2 15REFFLD(FORDE/ORID *LIBL/ORDER)
+000650161201     A            ORYEAR    R        O  2 22REFFLD(FORDE/ORYEAR *LIBL/ORDER)
+000660161201     A                                  3  2'Customer  .'
+000670161201     A            CUID      R        O  3 15REFFLD(FCUST/CUID *LIBL/CUSTOMER)
+000680161201     A            CUSTNM    R        O  3 22REFFLD(FCUST/CUSTNM *LIBL/CUSTOMER)
+000690161201     A            DATORD          L  O  4 15DATFMT(*DMY)
+000700161201     A            DATLIV          L  O  5 15DATFMT(*DMY)
+000710161201     A                                      MAPVAL(('01/01/40' *BLANK))
+000720161201     A            DATCLO          L  O  6 15DATFMT(*DMY)
+000730161201     A                                      MAPVAL(('01/01/40' *BLANK))
+000740161201     A                                  4  2'Création  .'
+000750161201     A                                  5  2'Delivery  .'
+000760161201     A                                  6  2'Close . . .'
+000770161201     A                                  7  2'Line'
+000780161201     A                                      DSPATR(HI)
+000790161201     A                                  7  7' Art.'
+000800161201     A                                      DSPATR(HI)
+000810161201     A                                  7 15'Qty '
+000820161201     A                                      DSPATR(HI)
+000830161201     A                                  7 22'Deliver'
+000840161201     A                                      DSPATR(HI)
+000850161201     A                                  7 41'Un.Price'
+000860161201     A                                      DSPATR(HI)
+000870161201     A                                  7 54'Total'
+000880161201     A                                      DSPATR(HI)
+000890161201     A                                  7 65'With VAT'
+000900161201     A                                      DSPATR(HI)
+000910161201     A          R KEY01
+000920161201     A*%%TS  SD  20161201  092910  VTAQUIN     REL-V7R1M0  5770-WDS
+000930161201     A                                 23  3'F3=Exit'
+000940161201     A                                      COLOR(BLU)
+000950161201     A                                 23 32'F12=Cancel'
+000960161201     A                                      COLOR(BLU)
+000970161201     A                                 23 17'F11=Detail'
+000980161201     A                                      COLOR(BLU)
+000990161201     A            TOT       R        O 22 50REFFLD(FDETO/ODTOT *LIBL/DETORD)
+001000161201     A                                      DSPATR(HI)
+001010161201     A            TOTVAT    R        O 22 63REFFLD(FDETO/ODTOTVAT *LIBL/DETORD)
+001020161201     A                                      DSPATR(HI)
+001030161201     A                                 21 50'============ ============'
+001040161201     A                                      DSPATR(HI)

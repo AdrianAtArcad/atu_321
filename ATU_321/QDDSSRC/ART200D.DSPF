@@ -1,0 +1,131 @@
+000017161201     A*%%TS  SD  20161201  100943  VTAQUIN     REL-V7R1M0  5770-WDS
+000180161201     A*%%EC
+000190161201     A                                      DSPSIZ(24 80 *DS3)
+000200161201     A                                      INDARA
+000210161201     A                                      CA03(03)
+000220161201     A                                      CA12(12)
+000230161201     A                                      PRINT
+000240161201     A                                      ERRSFL
+000250161027     A          R SFL01                     SFL
+000260161027     A*%%TS  SD  20161027  111456  VTAQUIN     REL-V7R1M0  5770-WDS
+000270161027     A  33                                  SFLNXTCHG
+000280161027     A            OPT01          2Y 0B  7  3
+000290161027     A  34                                  DSPATR(RI)
+000300161027     A  34                                  DSPATR(PC)
+000310161027     A                                      EDTCDE(Z)
+000320161027     A            ARID      R        O  7  7REFFLD(FARTI/ARID *LIBL/ARTICLE)
+000330161027     A            ARDESC    R        O  7 14REFFLD(FARTI/ARDESC *LIBL/ARTICLE)
+000340161027     A            ARTIFA    R        O  7 65REFFLD(FARTI/ARTIFA *LIBL/ARTICLE)
+000350161027     A            ARDEL     R        O  7 70REFFLD(FARTI/ARDEL *LIBL/ARTICLE)
+000360161201     A          R CTL01                     SFLCTL(SFL01)
+000370161201     A*%%TS  SD  20161201  100943  VTAQUIN     REL-V7R1M0  5770-WDS
+000380161201     A                                      SFLSIZ(0015)
+000390161201     A                                      SFLPAG(0014)
+000400161201     A N80                                  PAGEDOWN(25 'dynamic subfile')
+000410161201     A                                      CF06(06 'Create')
+000420161201     A                                      OVERLAY
+000430161201     A  31                                  SFLDSP
+000440161201     A  32                                  SFLDSPCTL
+000450161201     A  30                                  SFLCLR
+000460161201     A  80                                  SFLEND(*MORE)
+000470161201     A  35                                  SFLMSG('Invalid Option' 35)
+000480161201     A            RRB01          4S 0H      SFLRCDNBR
+000490161201     A                                  1  2'ART200-1'
+000500161201     A                                      COLOR(BLU)
+000510161201     A                                  3  4'Type options, press Enter.'
+000520161201     A                                      COLOR(BLU)
+000530161201     A                                  6  2'Opt'
+000540161201     A                                      DSPATR(HI)
+000550161201     A                                  1 32'Work with Articles'
+000560161201     A                                      DSPATR(HI)
+000570161201     A                                  1 68DATE
+000580161201     A                                      EDTCDE(Y)
+000590161201     A                                  2 68TIME
+000600161201     A                                  4  7'2=Edit'
+000610161201     A                                      COLOR(BLU)
+000620161201     A                                  4 17'3=Info'
+000630161201     A                                      COLOR(BLU)
+000640161201     A                                  4 39'6=Suppliers'
+000650161201     A                                      COLOR(BLU)
+000660161201     A                                  4 26'4=Delete'
+000670161201     A                                      COLOR(BLU)
+000680161201     A                                  6  7'Id'
+000690161201     A                                      DSPATR(HI)
+000700161201     A                                  6 14'Description'
+000710161201     A                                      DSPATR(HI)
+000720161201     A                                  6 65'Fam'
+000730161201     A                                      DSPATR(HI)
+000740161201     A                                  6 69'Del'
+000750161201     A                                      DSPATR(HI)
+000760161201     A                                  2  4'Position to . . .'
+000770161201     A            POSTO         10A  B  2 23CHECK(LC)
+000780161027     A          R KEY01
+000790161027     A*%%TS  SD  20161027  111559  VTAQUIN     REL-V7R1M0  5770-WDS
+000800161027     A                                 23  3'F3=Exit'
+000810161027     A                                      COLOR(BLU)
+000820161027     A                                 23 33'F12=Cancel'
+000830161027     A                                      COLOR(BLU)
+000840161027     A                                 23 16'F6=Create'
+000850161027     A                                      COLOR(BLU)
+000860161103     A          R FMT02
+000870161103     A*%%TS  SD  20161103  154035  VTAQUIN     REL-V7R1M0  5770-WDS
+000880161103     A                                      CF04(04 'Prompt')
+000890161103     A                                  1  2'ART200-2'
+000900161103     A                                      COLOR(BLU)
+000910161103     A                                  3  4'Type choices, press Enter.'
+000920161103     A                                      COLOR(BLU)
+000930161103     A                                 23  3'F3=Exit'
+000940161103     A                                      COLOR(BLU)
+000950161103     A                                 23 36'F12=Cancel'
+000960161103     A                                      COLOR(BLU)
+000970161103     A                                  1 32'Article definition'
+000980161103     A                                      DSPATR(HI)
+000990161103     A                                  5  4'Article id . . . . . . :'
+001000161103     A            ARID      R        O  5 29REFFLD(FARTI/ARID *LIBL/ARTICLE)
+001010161103     A                                  6  4'Description  . . . . . .'
+001020161103     A            ARDESC    R        B  6 29REFFLD(FARTI/ARDESC *LIBL/ARTICLE)
+001030161103     A  41                                  ERRMSG('A description is mandatory'-
+001040161103     A                                       41)
+001050161103     A                                      CHECK(LC)
+001060161103     A                                  7  4'Familly. . . . . . . . .'
+001070161103     A                                  9  4'Reference sale price . .'
+001080161103     A                                 11  4'Stock price  . . . . . .'
+001090161103     A                                 12  4'Minimum stock  . . . . .'
+001100161103     A            ARTIFA    R        B  7 29REFFLD(FARTI/ARTIFA *LIBL/ARTICLE)
+001110161103     A  40                                  ERRMSGID(ERR0001 *LIBL/SAMMSGF 40)
+001120161103     A            ARSALEPR  R        B  9 29REFFLD(FARTI/ARSALEPR *LIBL/ARTICLE)
+001130161103     A            ARWHSPR   R        B 11 29REFFLD(FARTI/ARWHSPR *LIBL/ARTICLE)
+001140161103     A            ARSTOCK   R        B 13 29REFFLD(FARTI/ARSTOCK *LIBL/ARTICLE)
+001150161103     A                                 13  4'Stock  . . . . . . . . .'
+001160161103     A            ARMINQTY  R        B 12 29REFFLD(FARTI/ARMINQTY *LIBL/ARTICLE)
+001170161103     A            FAMDESC       30A  O  7 34
+001180161103     A                                 23 15'F4=Prompt'
+001190161103     A                                      COLOR(BLU)
+001200161103     A                                  8  4'VAT code . . . . . . . .'
+001210161103     A                                 10  9'with VAT  . . . . :'
+001220161103     A            WITHVAT   R        O 10 29REFFLD(FARTI/ARSALEPR *LIBL/ARTICLE)
+001230161103     A                                      EDTCDE(2)
+001240161103     A            ARVATCD   R        B  8 29REFFLD(FARTI/ARVATCD *LIBL/ARTICLE)
+001250161103     A            VATRATE   R        O  8 31REFFLD(FVAT/VATRATE *LIBL/VATDEF)
+001260161103     A                                      EDTCDE(2)
+001270161103     A                                  8 37'%'
+001280161103     A            VATDESC   R        O  8 40REFFLD(FVAT/VATDESC *LIBL/VATDEF)
+001290161027     A          R FMT03
+001300161027     A*%%TS  SD  20161027  114842  VTAQUIN     REL-V7R1M0  5770-WDS
+001310161027     A                                  1  2'ART200-3'
+001320161027     A                                      COLOR(BLU)
+001330161027     A                                  3  4' Make change. Press Enter to confi-
+001340161027     A                                      rm'
+001350161027     A                                      COLOR(BLU)
+001360161027     A                                 23  3' F3Exit'
+001370161027     A                                      COLOR(BLU)
+001380161027     A                                 23 19' F12Cancel'
+001390161027     A                                      COLOR(BLU)
+001400161027     A                                  1 31'Article Informations'
+001410161027     A                                      DSPATR(HI)
+001420161027     A            ARID      R        O  2  4REFFLD(FARTI/ARID *LIBL/ARTICLE)
+001430161027     A                                  1 69DATE
+001440161027     A                                      EDTCDE(Y)
+001450161027     A            ARDESC    R        O  2 11REFFLD(FARTI/ARDESC *LIBL/ARTICLE)
+001460161027     A                                  2 69TIME
+001470161027     A            TEXT        1520A  B  4  1CHECK(LC)

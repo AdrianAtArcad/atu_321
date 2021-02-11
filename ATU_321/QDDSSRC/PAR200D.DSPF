@@ -1,0 +1,148 @@
+000017161209     A*%%TS  SD  20161209  094544  VTAQUIN     REL-V7R1M0  5770-WDS
+000180161209     A*%%EC
+000190161209     A                                      DSPSIZ(24 80 *DS3)
+000200161209     A                                      REF(*LIBL/PARAMETER)
+000210161209     A                                      INDARA
+000220161209     A                                      CA03(03)
+000230161209     A                                      CA12(12)
+000240161209     A                                      PRINT
+000250161209     A                                      ERRSFL
+000260161209     A          R SFL01                     SFL
+000270161209     A*%%TS  SD  20161209  092705  VTAQUIN     REL-V7R1M0  5770-WDS
+000280161209     A  33                                  SFLNXTCHG
+000290161209     A            OPT01          2Y 0B  7  3
+000300161209     A  34                                  DSPATR(RI)
+000310161209     A  34                                  DSPATR(PC)
+000320161209     A                                      EDTCDE(Z)
+000330161209     A            PACODE    R        O  7  6REFFLD(FPARAM/PACODE *LIBL/PARAMETE-
+000340161209     A                                      R)
+000350161209     A            PASUBCODE R        O  7 17REFFLD(FPARAM/PASUBCODE *LIBL/PARAM-
+000360161209     A                                      ETER)
+000370161209     A            PARM1     R        O  7 28REFFLD(FPARAM/PARM1 *LIBL/PARAMETER)
+000380161209     A            PARM3     R        O  7 72REFFLD(FPARAM/PARM3 *LIBL/PARAMETER)
+000390161209     A            PARM5     R        O  7 77REFFLD(FPARAM/PARM5 *LIBL/PARAMETER)
+000400161209     A            PARM4     R        O  7 75REFFLD(FPARAM/PARM4 *LIBL/PARAMETER)
+000410161209     A            PARM2S        32   O  7 39
+000420161209     A          R CTL01                     SFLCTL(SFL01)
+000430161209     A*%%TS  SD  20161209  094544  VTAQUIN     REL-V7R1M0  5770-WDS
+000440161209     A N80                                  PAGEDOWN(25 'dynamic subfile')
+000450161209     A                                      CA05(05 'Refresh')
+000460161209     A                                      CF06(06 'Create')
+000470161209     A                                      OVERLAY
+000480161209     A  31                                  SFLDSP
+000490161209     A  32                                  SFLDSPCTL
+000500161209     A  30                                  SFLCLR
+000510161209     A  80                                  SFLEND(*MORE)
+000520161209     A                                      SFLSIZ(0015)
+000530161209     A                                      SFLPAG(0014)
+000540161209     A  35                                  SFLMSG('Invalid Option' 35)
+000550161209     A            RRB01          4S 0H      SFLRCDNBR
+000560161209     A                                  1  2'PAR200-1'
+000570161209     A                                      COLOR(BLU)
+000580161209     A                                  3  4'Type options, press Enter.'
+000590161209     A                                      COLOR(BLU)
+000600161209     A                                  6  2'Opt'
+000610161209     A                                      DSPATR(HI)
+000620161209     A                                  1 31'Work with Parameters'
+000630161209     A                                      DSPATR(HI)
+000640161209     A                                  1 70DATE
+000650161209     A                                      EDTCDE(Y)
+000660161209     A                                      COLOR(BLU)
+000670161209     A                                  2 70TIME
+000680161209     A                                      COLOR(BLU)
+000690161209     A                                  4  6'2=Edit'
+000700161209     A                                      COLOR(BLU)
+000710161209     A                                  4 17'4=Delete'
+000720161209     A                                      COLOR(BLU)
+000730161209     A                                  6  6'Code'
+000740161209     A                                      DSPATR(HI)
+000750161209     A                                  6 17'Sub-Code'
+000760161209     A                                      DSPATR(HI)
+000770161209     A                                  6 28'1'
+000780161209     A                                      DSPATR(HI)
+000790161209     A                                  6 39'2'
+000800161209     A                                      DSPATR(HI)
+000810161209     A                                  6 72'3'
+000820161209     A                                      DSPATR(HI)
+000830161209     A                                  6 75'4'
+000840161209     A                                      DSPATR(HI)
+000850161209     A                                  6 79'5'
+000860161209     A                                      DSPATR(HI)
+000870161209     A          R KEY01
+000880161209     A*%%TS  SD  20161209  092705  VTAQUIN     REL-V7R1M0  5770-WDS
+000890161209     A                                 23  3'F3=Exit'
+000900161209     A                                      COLOR(BLU)
+000910161209     A                                 23 34'F12=Cancel'
+000920161209     A                                      COLOR(BLU)
+000930161209     A                                 23 18'F6=Create'
+000940161209     A                                      COLOR(BLU)
+000950161209     A          R FMT02
+000960161209     A*%%TS  SD  20161209  092705  VTAQUIN     REL-V7R1M0  5770-WDS
+000970161209     A                                  1  2'PAR200-2'
+000980161209     A                                      COLOR(BLU)
+000990161209     A                                  3  4'Type choices, press Enter.'
+001000161209     A                                      COLOR(BLU)
+001010161209     A                                 23  3'F3=Exit'
+001020161209     A                                      COLOR(BLU)
+001030161209     A                                 23 19'F12=Cancel'
+001040161209     A                                      COLOR(BLU)
+001050161209     A                                  1 34'Edit Parameter'
+001060161209     A                                      DSPATR(HI)
+001070161209     A                                  1 70DATE
+001080161209     A                                      EDTCDE(Y)
+001090161209     A                                      COLOR(BLU)
+001100161209     A                                  2 70TIME
+001110161209     A                                      COLOR(BLU)
+001120161209     A                                  5  3'Parameter Code  . . . :'
+001130161209     A                                  6  3'parameter Sub_code  . :'
+001140161209     A                                  7  3'Parameter 1 . . . . . .'
+001150161209     A                                  8  3'Parameter 2 . . . . . .'
+001160161209     A                                 10  3'Parameter 3 . . . . . .'
+001170161209     A                                 11  3'Parameter 4 . . . . . .'
+001180161209     A                                 12  3'Parameter 5 . . . . . .'
+001190161209     A            PACODE    R        O  5 27REFFLD(FPARAM/PACODE *LIBL/PARAMETE-
+001200161209     A                                      R)
+001210161209     A            PASUBCODE R        O  6 27REFFLD(FPARAM/PASUBCODE *LIBL/PARAM-
+001220161209     A                                      ETER)
+001230161209     A            PARM1     R        B  7 27REFFLD(FPARAM/PARM1 *LIBL/PARAMETER)
+001240161209     A            PARM2     R        B  8 27REFFLD(FPARAM/PARM2 *LIBL/PARAMETER)
+001250161209     A                                      CHECK(LC)
+001260161209     A            PARM3     R        B 10 27REFFLD(FPARAM/PARM3 *LIBL/PARAMETER)
+001270161209     A            PARM4     R        B 11 27REFFLD(FPARAM/PARM4 *LIBL/PARAMETER)
+001280161209     A            PARM5     R        B 12 27REFFLD(FPARAM/PARM5 *LIBL/PARAMETER)
+001290161209     A          R FMT03
+001300161209     A*%%TS  SD  20161209  092705  VTAQUIN     REL-V7R1M0  5770-WDS
+001310161209     A                                  1  2'PAR200-3'
+001320161209     A                                      COLOR(BLU)
+001330161209     A                                  3  4'Type choices, press Enter.'
+001340161209     A                                      COLOR(BLU)
+001350161209     A                                 23  3'F3=Exit'
+001360161209     A                                      COLOR(BLU)
+001370161209     A                                 23 19'F12=Cancel'
+001380161209     A                                      COLOR(BLU)
+001390161209     A                                  1 33'Create Parameter'
+001400161209     A                                      DSPATR(HI)
+001410161209     A                                  1 70DATE
+001420161209     A                                      EDTCDE(Y)
+001430161209     A                                      COLOR(BLU)
+001440161209     A                                  2 70TIME
+001450161209     A                                      COLOR(BLU)
+001460161209     A                                  5  3'Parameter Code  . . . .'
+001470161209     A                                  6  3'parameter Sub_code  . .'
+001480161209     A                                  7  3'Parameter 1 . . . . . .'
+001490161209     A                                  8  3'Parameter 2 . . . . . .'
+001500161209     A                                 10  3'Parameter 3 . . . . . .'
+001510161209     A                                 11  3'Parameter 4 . . . . . .'
+001520161209     A                                 12  3'Parameter 5 . . . . . .'
+001530161209     A            PACODE    R        B  5 27REFFLD(FPARAM/PACODE *LIBL/PARAMETE-
+001540161209     A                                      R)
+001550161209     A  40                                  ERRMSG('This code/sub-code already -
+001560161209     A                                      exist.' 40)
+001570161209     A            PASUBCODE R        B  6 27REFFLD(FPARAM/PASUBCODE *LIBL/PARAM-
+001580161209     A                                      ETER)
+001590161209     A            PARM1     R        B  7 27REFFLD(FPARAM/PARM1 *LIBL/PARAMETER)
+001600161209     A            PARM2     R        B  8 27REFFLD(FPARAM/PARM2 *LIBL/PARAMETER)
+001610161209     A                                      CHECK(LC)
+001620161209     A            PARM3     R        B 10 27REFFLD(FPARAM/PARM3 *LIBL/PARAMETER)
+001630161209     A            PARM4     R        B 11 27REFFLD(FPARAM/PARM4 *LIBL/PARAMETER)
+001640161209     A            PARM5     R        B 12 27REFFLD(FPARAM/PARM5 *LIBL/PARAMETER)

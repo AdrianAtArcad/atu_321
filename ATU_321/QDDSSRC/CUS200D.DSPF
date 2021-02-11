@@ -1,0 +1,150 @@
+000001888888      *%CSTD===========================================================*
+000002888888      ** Application. : ARC_NEW    PRD:New Sample                      *
+000003888888      ** Component. . : CUS200D                       Type: DSPF       *
+000004888888      **===============================================================*
+000005888888      ** Sub-system . : CUS Customer                                   *
+000006888888      ** Function . . :                                                *
+000007888888      ** Sub-function :                                                *
+000008888888      **%S=============================================================*
+000009888888      ** Description of functions:                                     *
+000010888888      **                                                               *
+000011888888      **                                                               *
+000012888888      **                                                               *
+000013888888      **%E=============================================================*
+000014888888      ** AUTHOR:                          00:00                        *
+000015888888      ** MODIFS: 04 VTAQUIN    20/05/2020 10:11  01.02.12    00/       *
+000016888888      **         03 VTAQUIN    19/12/2016 15:17  01.02.04    00/       *
+000017888888      **         02 VTAQUIN    16/12/2016 10:13  01.02.02    00/       *
+000018888888      **         01 VTAQUIN    03/11/2016 17:09  01.01.00    00/       *
+000019888888      *%ECSTD==========================================================*
+000021161216     A*%%TS  SD  20161216  101205  VTAQUIN     REL-V7R1M0  5770-WDS
+000190161216     A*%%EC
+000200161216     A                                      DSPSIZ(24 80 *DS3)
+000210161216     A                                      INDARA
+000220161216     A                                      CA03(03)
+000230161216     A                                      CA12(12)
+000240161216     A                                      PRINT
+000250161216     A                                      ERRSFL
+000260161025     A          R SFL01                     SFL
+000270161025     A*%%TS  SD  20161025  103254  VTAQUIN     REL-V7R1M0  5770-WDS
+000280161025     A  33                                  SFLNXTCHG
+000290161025     A            OPT01          2Y 0B  7  3
+000300161025     A  34                                  DSPATR(RI)
+000310161025     A  34                                  DSPATR(PC)
+000320161025     A                                      EDTCDE(Z)
+000330161025     A            CUID      R        O  7  7REFFLD(FCUST/CUID *LIBL/CUSTOMER)
+000340161025     A            CUSTNM    R        O  7 13REFFLD(FCUST/CUSTNM *LIBL/CUSTOMER)
+000350161025     A            CUCITY    R        O  7 44REFFLD(FCUST/CUCITY *LIBL/CUSTOMER)
+000360161025     A            CUDEL     R        O  7 75REFFLD(FCUST/CUDEL *LIBL/CUSTOMER)
+000370161216     A          R CTL01                     SFLCTL(SFL01)
+000380161216     A*%%TS  SD  20161216  094733  VTAQUIN     REL-V7R1M0  5770-WDS
+000390161216     A N80                                  PAGEDOWN(25 'dynamic subfile')
+000400161216     A                                      CA05(05 'Refresh')
+000410161216     A                                      CF06(06 'Create')
+000420161216     A                                      OVERLAY
+000430161216     A  31                                  SFLDSP
+000440161216     A  32                                  SFLDSPCTL
+000450161216     A  30                                  SFLCLR
+000460161216     A  80                                  SFLEND(*MORE)
+000470161216     A                                      SFLSIZ(0015)
+000480161216     A                                      SFLPAG(0014)
+000490161216     A  35                                  SFLMSG('Invalid Option' 35)
+000500161216     A            RRB01          4S 0H      SFLRCDNBR
+000510161216     A                                  1  2'CUS200-1'
+000520161216     A                                      COLOR(BLU)
+000530161216     A                                  3  4'Type options, press Enter.'
+000540161216     A                                      COLOR(BLU)
+000550161216     A                                  6  3'Opt'
+000560161216     A                                      DSPATR(HI)
+000570161216     A                                  1 31'Work with Customers'
+000580161216     A                                      DSPATR(HI)
+000590161216     A                                  1 70DATE
+000600161216     A                                      EDTCDE(Y)
+000610161216     A                                  2 70TIME
+000620161216     A                                  4  6'2=Edit'
+000630161216     A                                      COLOR(BLU)
+000640161216     A                                  4 17'5=Orders'
+000650161216     A                                      COLOR(BLU)
+000660161216     A                                  6  7'Id'
+000670161216     A                                      DSPATR(HI)
+000680161216     A                                  6 13'Customer'
+000690161216     A                                      DSPATR(HI)
+000700161216     A                                  6 44'City'
+000710161216     A                                      DSPATR(HI)
+000720161216     A                                  6 74'Del'
+000730161216     A                                      DSPATR(HI)
+000740161216     A                                  2  4'Position to name . .'
+000750161216     A                                      COLOR(BLU)
+000760161216     A            POSTO         10A  B  2 27CHECK(LC)
+000770161216     A          R KEY01
+000780161216     A*%%TS  SD  20161216  094733  VTAQUIN     REL-V7R1M0  5770-WDS
+000790161216     A                                 23  3'F3=Exit'
+000800161216     A                                      COLOR(BLU)
+000810161216     A                                 23 48'F12=Cancel'
+000820161216     A                                      COLOR(BLU)
+000830161216     A                                 23 17'F5=Refresh'
+000840161216     A                                      COLOR(BLU)
+000850161216     A                                 23 33'F6=Create'
+000860161216     A                                      COLOR(BLU)
+000870161216     A          R FMT02
+000880161216     A*%%TS  SD  20161216  101205  VTAQUIN     REL-V7R1M0  5770-WDS
+000890161216     A                                      CF04(04)
+000900161216     A                                  1  2'CUS200-2'
+000910161216     A                                      COLOR(BLU)
+000920161216     A                                  3  4'Type choices, press Enter.'
+000930161216     A                                      COLOR(BLU)
+000940161216     A                                 23  3'F3=Exit'
+000950161216     A                                      COLOR(BLU)
+000960161216     A                                 23 19'F12=Cancel'
+000970161216     A                                      COLOR(BLU)
+000980161216     A                                  1 34'Edit Customer'
+000990161216     A                                      DSPATR(HI)
+001000161216     A                                  1 70DATE
+001010161216     A                                      EDTCDE(Y)
+001020161216     A                                      COLOR(BLU)
+001030161216     A                                  2 70TIME
+001040161216     A                                      COLOR(BLU)
+001050161216     A                                  5  3'Customer Id . . . . . :'
+001060161216     A                                  6  3'Name  . . . . . . . . .'
+001070161216     A            CUID      R        O  5 27REFFLD(FCUST/CUID *LIBL/CUSTOMER)
+001080161216     A            CUSTNM    R        B  6 27REFFLD(FCUST/CUSTNM *LIBL/CUSTOMER)
+001090161216     A  41                                  ERRMSG('The name is mandatory' 41)
+001091200520     A  42                                  ERRMSGID(ERR2000 SAMMSGF 42 +
+001092200520     A                                      &ERRDATA)
+001100161216     A                                      CHECK(LC)
+001101200520     A            ERRDATA       45   P
+001110161216     A                                  7  3'Phone . . . . . . . . .'
+001120161216     A                                  8  3'Vat N°  . . . . . . . .'
+001130161216     A                                  9  3'eMail . . . . . . . . .'
+001140161216     A            CUMAIL    R        B  9 27REFFLD(FCUST/CUMAIL *LIBL/CUSTOMER)
+001150161216     A            CUPHONE   R        B  7 27REFFLD(FCUST/CUPHONE *LIBL/CUSTOMER)
+001151200520     A  43                                  ERRMSGID(ERR2001 SAMMSGF 43)
+001152200520     A  44                                  ERRMSGID(ERR2002 SAMMSGF 44)
+001160161216     A            CUVAT     R        B  8 27REFFLD(FCUST/CUVAT *LIBL/CUSTOMER)
+001170161216     A                                 10  3'Address . . . . . . . .'
+001180161216     A            CULINE1   R        B 10 27REFFLD(FCUST/CULINE1 *LIBL/CUSTOMER)
+001190161216     A                                      CHECK(LC)
+001200161216     A            CULINE2   R        B 11 27REFFLD(FCUST/CULINE2 *LIBL/CUSTOMER)
+001210161216     A                                      CHECK(LC)
+001220161216     A            CULINE3   R        B 12 27REFFLD(FCUST/CULINE3 *LIBL/CUSTOMER)
+001230161216     A                                      CHECK(LC)
+001240161216     A            CUZIP     R        B 13 27REFFLD(FCUST/CUZIP *LIBL/CUSTOMER)
+001250161216     A            CUCITY    R        B 13 39REFFLD(FCUST/CUCITY *LIBL/CUSTOMER)
+001260161216     A                                      CHECK(LC)
+001270161216     A                                 13  3'Postal Code & City  . .'
+001280161216     A                                 14  3'Country Code  . . . . .'
+001290161216     A            CUCOUN    R        B 14 27REFFLD(FCUST/CUCOUN *LIBL/CUSTOMER)
+001300161216     A  40                                  ERRMSGID(ERR0002 *LIBL/SAMMSGF 40)
+001310161216     A                                 15  3'Credit Limit  . . . . .'
+001320161219     A                                 16  3'Current Credit  . . . :'
+001330161216     A            CULIMCRE  R        B 15 27REFFLD(FCUST/CULIMCRE *LIBL/CUSTOME-
+001340161216     A                                      R)
+001350161216     A                                      EDTCDE(2)
+001360161216     A            CUCREDIT  R        O 16 27REFFLD(FCUST/CUCREDIT *LIBL/CUSTOME-
+001370161216     A                                      R)
+001380161216     A                                      EDTCDE(2)
+001390161216     A            CONAME        30A  O 14 31
+001400161216     A            MODE           3A  O  3 70
+001401161219     A                                 17  3'Last Order Date . . . :'
+001402161219     A            LASTORD         L  B 17 27DATFMT(*JOB)
+001403161219     A                                      MAPVAL(('1940-01-01' *BLANK))
